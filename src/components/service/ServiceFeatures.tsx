@@ -2,7 +2,11 @@ import { motion } from "motion/react";
 import { ServiceFeaturesData } from "../../types/service";
 import { 
   Sparkles, Zap, Shield, Target, Rocket, Globe, 
-  TrendingUp, Award, Users, Settings, Heart, Star 
+  TrendingUp, Award, Users, Settings, Heart, Star,
+  Hotel, Palmtree, Building2, Briefcase, Leaf, Handshake, Lightbulb,
+  Sprout, Waves, Package, LineChart, Gem, Shirt, Footprints, ShieldCheck, GraduationCap,
+  Video, Stethoscope, Plane, Hospital, DollarSign, Map, Cpu, Wheat,
+  Sofa, Lamp, Palette, Factory, Utensils, Coffee, Store, ShoppingBag
 } from "lucide-react";
 
 const iconMap: Record<string, any> = {
@@ -17,7 +21,40 @@ const iconMap: Record<string, any> = {
   users: Users,
   settings: Settings,
   heart: Heart,
-  star: Star
+  star: Star,
+  hotel: Hotel,
+  palmtree: Palmtree,
+  "building-2": Building2,
+  briefcase: Briefcase,
+  leaf: Leaf,
+  handshake: Handshake,
+  lightbulb: Lightbulb,
+  sprout: Sprout,
+  waves: Waves,
+  package: Package,
+  "line-chart": LineChart,
+  gem: Gem,
+  shirt: Shirt,
+  footprints: Footprints,
+  "shield-check": ShieldCheck,
+  "graduation-cap": GraduationCap,
+  "trending-up": TrendingUp,
+  video: Video,
+  stethoscope: Stethoscope,
+  plane: Plane,
+  hospital: Hospital,
+  "dollar-sign": DollarSign,
+  map: Map,
+  cpu: Cpu,
+  wheat: Wheat,
+  sofa: Sofa,
+  lamp: Lamp,
+  palette: Palette,
+  factory: Factory,
+  utensils: Utensils,
+  coffee: Coffee,
+  store: Store,
+  "shopping-bag": ShoppingBag
 };
 
 interface ServiceFeaturesProps {
@@ -30,7 +67,7 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
   const videoUrl = data.backgroundVideo || "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4";
 
   return (
-    <section className="relative py-32 px-8 bg-[#1a1a2e] overflow-hidden">
+    <section className="relative py-16 px-8 bg-[#1a1a2e] overflow-hidden">
       {/* Video Background Layer */}
       <div className="absolute inset-0">
         <video
@@ -75,7 +112,7 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           {data.subtitle && (
             <div className="mb-4">
@@ -91,7 +128,7 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
           <h2 
             className="text-white mx-auto max-w-[900px]"
             style={{ 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
+              fontSize: 'clamp(2rem, 4vw, 3rem)', 
               fontWeight: '800',
               lineHeight: '1.15'
             }}
@@ -102,13 +139,41 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
 
         {/* Bento Grid Layout */}
         {layout === 'bento' && (
-          <div className="grid md:grid-cols-6 gap-6 auto-rows-[280px]">
+          <div className="max-w-[1200px] mx-auto grid md:grid-cols-6 gap-4 auto-rows-auto">
             {data.items.map((feature, idx) => {
               const Icon = iconMap[feature.icon] || Sparkles;
               
-              // Bento pattern: alternating sizes
-              const colSpan = idx === 0 || idx === 3 ? 'md:col-span-4' : 'md:col-span-2';
-              const rowSpan = idx === 0 || idx === 2 ? 'md:row-span-2' : '';
+              // Bento pattern: 2-4, 3-3, 2-4 (repeating every 6 cards)
+              // This creates visual variety while filling exactly 6 columns per row
+              let colSpan = 'md:col-span-2'; // Default
+              let minHeight = 'min-h-[200px]'; // Default min height - Compact for 2-row view
+              
+              const position = idx % 6;
+              
+              // Row 1: 2 + 4 = 6 columns
+              if (position === 0) {
+                colSpan = 'md:col-span-2';
+                minHeight = 'min-h-[200px]';
+              } else if (position === 1) {
+                colSpan = 'md:col-span-4';
+                minHeight = 'min-h-[200px]';
+              }
+              // Row 2: 3 + 3 = 6 columns
+              else if (position === 2) {
+                colSpan = 'md:col-span-3';
+                minHeight = 'min-h-[220px]';
+              } else if (position === 3) {
+                colSpan = 'md:col-span-3';
+                minHeight = 'min-h-[220px]';
+              }
+              // Row 3: 2 + 4 = 6 columns
+              else if (position === 4) {
+                colSpan = 'md:col-span-2';
+                minHeight = 'min-h-[200px]';
+              } else if (position === 5) {
+                colSpan = 'md:col-span-4';
+                minHeight = 'min-h-[200px]';
+              }
               
               return (
                 <motion.div
@@ -118,17 +183,17 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
                   whileHover={{ scale: 1.02, y: -8 }}
-                  className={`group relative ${colSpan} ${rowSpan}`}
+                  className={`group relative ${colSpan}`}
                 >
                   <div 
-                    className="h-full rounded-3xl backdrop-blur-xl border border-white/10 hover:border-white/20 p-8 overflow-hidden transition-all duration-500"
+                    className={`${minHeight} h-full rounded-3xl backdrop-blur-xl border border-white/10 hover:border-white/20 p-5 transition-all duration-500`}
                     style={{
                       background: `linear-gradient(135deg, ${color}10, transparent)`
                     }}
                   >
                     {/* Glow Effect */}
                     <div 
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
                       style={{
                         background: `radial-gradient(circle at 50% 0%, ${color}20, transparent 70%)`
                       }}
@@ -138,27 +203,35 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
                     <div className="relative h-full flex flex-col">
                       {/* Icon */}
                       <div 
-                        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500"
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3 flex-shrink-0 group-hover:scale-110 transition-transform duration-500"
                         style={{
                           background: `linear-gradient(135deg, ${color}30, ${color}10)`,
                           border: `1px solid ${color}40`
                         }}
                       >
-                        <Icon className="w-7 h-7" style={{ color: color }} />
+                        <Icon className="w-6 h-6" style={{ color: color }} />
                       </div>
                       
                       {/* Title */}
                       <h3 
-                        className="text-white mb-3"
-                        style={{ fontSize: '1.5rem', fontWeight: '700' }}
+                        className="text-white mb-2 flex-shrink-0"
+                        style={{ 
+                          fontSize: '1.125rem', 
+                          fontWeight: '700',
+                          lineHeight: '1.3'
+                        }}
                       >
                         {feature.title}
                       </h3>
                       
                       {/* Description */}
                       <p 
-                        className="text-gray-400 leading-relaxed flex-1"
-                        style={{ fontSize: '0.95rem', fontWeight: '300' }}
+                        className="text-gray-400 leading-relaxed mb-auto"
+                        style={{ 
+                          fontSize: '0.875rem', 
+                          fontWeight: '300',
+                          lineHeight: '1.5'
+                        }}
                       >
                         {feature.description}
                       </p>
@@ -166,8 +239,12 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
                       {/* Details (if exists) */}
                       {feature.details && (
                         <p 
-                          className="text-gray-500 mt-4 pt-4 border-t border-white/5"
-                          style={{ fontSize: '0.85rem', fontWeight: '300' }}
+                          className="text-gray-500 mt-3 pt-3 border-t border-white/5 flex-shrink-0"
+                          style={{ 
+                            fontSize: '0.75rem', 
+                            fontWeight: '300',
+                            lineHeight: '1.4'
+                          }}
                         >
                           {feature.details}
                         </p>

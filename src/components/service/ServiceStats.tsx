@@ -2,7 +2,8 @@ import { motion, useInView } from "motion/react";
 import { ServiceStatsData } from "../../types/service";
 import { useRef, useEffect, useState } from "react";
 import { 
-  TrendingUp, Users, Globe, Award, Target, Zap
+  TrendingUp, Users, Globe, Award, Target, Zap, Building2, Hotel,
+  Droplet, Calendar, Sprout, Leaf, Bitcoin, Server, Waves, Building, Sparkles, Heart, ShieldCheck, Briefcase, Hospital, TrendingDown, Store, DollarSign, Package
 } from "lucide-react";
 
 const iconMap: Record<string, any> = {
@@ -11,7 +12,27 @@ const iconMap: Record<string, any> = {
   globe: Globe,
   award: Award,
   target: Target,
-  zap: Zap
+  zap: Zap,
+  "building-2": Building2,
+  hotel: Hotel,
+  droplet: Droplet,
+  calendar: Calendar,
+  sprout: Sprout,
+  leaf: Leaf,
+  bitcoin: Bitcoin,
+  server: Server,
+  waves: Waves,
+  building: Building,
+  sparkles: Sparkles,
+  heart: Heart,
+  "shield-check": ShieldCheck,
+  briefcase: Briefcase,
+  hospital: Hospital,
+  "trending-down": TrendingDown,
+  store: Store,
+  "dollar-sign": DollarSign,
+  "trending-up": TrendingUp,
+  package: Package
 };
 
 function AnimatedCounter({ 
@@ -65,7 +86,7 @@ export function ServiceStats({ data, color }: ServiceStatsProps) {
       {/* Background */}
       <div className="absolute inset-0">
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full blur-[150px] opacity-20"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[125px] md:w-[800px] md:h-[400px] rounded-full blur-[150px] opacity-20"
           style={{ backgroundColor: color }}
         ></div>
       </div>

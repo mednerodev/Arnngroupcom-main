@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { ServiceHero } from "../components/service/ServiceHero";
+import { ServiceSearchNav } from "../components/service/ServiceSearchNav";
 import { ServiceOverview } from "../components/service/ServiceOverview";
 import { ServiceFeatures } from "../components/service/ServiceFeatures";
 import { ServiceProcess } from "../components/service/ServiceProcess";
@@ -68,6 +69,9 @@ export function ServicePage() {
       
       {/* CTA Section */}
       <ServiceCTA data={service.cta} color={service.color} />
+      
+      {/* Browse by Category Section - Before Footer */}
+      <ServiceSearchNav />
       
       {/* Footer */}
       <Footer />

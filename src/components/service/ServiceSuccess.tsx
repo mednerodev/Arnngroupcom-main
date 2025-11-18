@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Quote, Award, TrendingUp, Globe } from "lucide-react";
+import { Quote, Award, TrendingUp, Globe, Hotel, Building2, Bitcoin, Server, Sprout, Waves, Building, Gem, Heart, Shirt, Footprints, Briefcase, Leaf, Sparkles, ShieldCheck, Handshake, Video, Plane, Cpu, Users, Factory, Store } from "lucide-react";
 
 interface SuccessStory {
   title: string;
@@ -23,8 +23,31 @@ interface ServiceSuccessProps {
 const iconMap: Record<string, any> = {
   award: Award,
   trending: TrendingUp,
+  "trending-up": TrendingUp,
   globe: Globe,
-  quote: Quote
+  quote: Quote,
+  hotel: Hotel,
+  "building-2": Building2,
+  bitcoin: Bitcoin,
+  server: Server,
+  sprout: Sprout,
+  waves: Waves,
+  building: Building,
+  gem: Gem,
+  heart: Heart,
+  shirt: Shirt,
+  footprints: Footprints,
+  briefcase: Briefcase,
+  leaf: Leaf,
+  sparkles: Sparkles,
+  "shield-check": ShieldCheck,
+  handshake: Handshake,
+  video: Video,
+  plane: Plane,
+  cpu: Cpu,
+  users: Users,
+  factory: Factory,
+  store: Store
 };
 
 export function ServiceSuccess({ data, color }: ServiceSuccessProps) {
@@ -33,7 +56,7 @@ export function ServiceSuccess({ data, color }: ServiceSuccessProps) {
       {/* Background */}
       <div className="absolute inset-0">
         <div 
-          className="absolute top-1/2 left-1/3 w-[600px] h-[600px] rounded-full blur-[150px] opacity-15"
+          className="absolute top-1/2 left-1/3 w-[250px] h-[250px] md:w-[600px] md:h-[600px] rounded-full blur-[150px] opacity-15"
           style={{ backgroundColor: color }}
         ></div>
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px]"></div>

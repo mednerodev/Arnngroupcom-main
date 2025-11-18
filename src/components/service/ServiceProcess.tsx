@@ -1,6 +1,14 @@
 import { motion } from "motion/react";
 import { ServiceProcessData } from "../../types/service";
-import { Check } from "lucide-react";
+import { Check, Lightbulb, Handshake, Leaf, Target } from "lucide-react";
+
+const iconMap: Record<string, any> = {
+  check: Check,
+  lightbulb: Lightbulb,
+  handshake: Handshake,
+  leaf: Leaf,
+  target: Target
+};
 
 interface ServiceProcessProps {
   data: ServiceProcessData;
@@ -155,17 +163,20 @@ export function ServiceProcess({ data, color }: ServiceProcessProps) {
                       />
 
                       {/* Icon if provided */}
-                      {step.icon && (
-                        <div 
-                          className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500"
-                          style={{
-                            background: `linear-gradient(135deg, ${color}30, ${color}10)`,
-                            border: `1px solid ${color}40`
-                          }}
-                        >
-                          <Check className="w-6 h-6" style={{ color: color }} />
-                        </div>
-                      )}
+                      {step.icon && (() => {
+                        const Icon = iconMap[step.icon] || Check;
+                        return (
+                          <div 
+                            className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500"
+                            style={{
+                              background: `linear-gradient(135deg, ${color}30, ${color}10)`,
+                              border: `1px solid ${color}40`
+                            }}
+                          >
+                            <Icon className="w-6 h-6" style={{ color: color }} />
+                          </div>
+                        );
+                      })()}
 
                       <div className="relative space-y-2">
                         <div 

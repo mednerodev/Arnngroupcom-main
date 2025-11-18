@@ -136,11 +136,11 @@ export function ServiceOverview({ data, color }: ServiceOverviewProps) {
             {data.image ? (
               <div className="relative">
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden border border-white/10">
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 max-h-[300px] md:max-h-[400px]">
                   <img 
                     src={data.image} 
                     alt={data.title}
-                    className="w-full h-auto"
+                    className="w-full h-full object-cover"
                   />
                   {/* Image Overlay */}
                   <div 
@@ -151,31 +151,144 @@ export function ServiceOverview({ data, color }: ServiceOverviewProps) {
                   ></div>
                 </div>
                 
-                {/* Floating Accent Card */}
-                <motion.div
-                  animate={{ 
-                    y: [0, -20, 0],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{ 
-                    duration: 6, 
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute -bottom-8 -left-8 w-48 h-48 rounded-3xl backdrop-blur-xl border border-white/20 p-6"
-                  style={{
-                    background: `linear-gradient(135deg, ${color}30, ${color}10)`
-                  }}
-                >
-                  <div className="h-full flex flex-col justify-end">
-                    <div className="text-white" style={{ fontSize: '2.5rem', fontWeight: '800' }}>
-                      100%
-                    </div>
-                    <div className="text-white/70" style={{ fontSize: '0.875rem', fontWeight: '400' }}>
-                      Dedicated
-                    </div>
+                {/* Floating Stats Cards - Centered Horizontal Row - Bigger Size */}
+                <div className="absolute -bottom-20 md:-bottom-28 left-1/2 -translate-x-1/2 w-[95%] md:w-auto">
+                  <div className="flex flex-wrap gap-x-2 gap-y-5 sm:gap-x-3 md:gap-5 justify-center items-start pb-2 w-[80vw] mx-auto">
+                    {/* Card 1 */}
+                    <motion.div
+                      animate={{ 
+                        y: [0, -15, 0],
+                      }}
+                      transition={{ 
+                        duration: 6, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-xl md:rounded-2xl backdrop-blur-xl border border-white/20 p-3 md:p-5"
+                      style={{
+                        background: `linear-gradient(135deg, ${color}30, ${color}10)`
+                      }}
+                    >
+                      <div className="h-full flex flex-col justify-end">
+                        <div className="text-white" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', fontWeight: '800' }}>
+                          500+
+                        </div>
+                        <div className="text-white/70" style={{ fontSize: 'clamp(0.625rem, 1.5vw, 0.875rem)', fontWeight: '400' }}>
+                          Projects
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Card 2 */}
+                    <motion.div
+                      animate={{ 
+                        y: [0, -20, 0],
+                      }}
+                      transition={{ 
+                        duration: 6, 
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0.5
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-xl md:rounded-2xl backdrop-blur-xl border border-white/20 p-3 md:p-5"
+                      style={{
+                        background: `linear-gradient(135deg, ${color}30, ${color}10)`
+                      }}
+                    >
+                      <div className="h-full flex flex-col justify-end">
+                        <div className="text-white" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', fontWeight: '800' }}>
+                          50+
+                        </div>
+                        <div className="text-white/70" style={{ fontSize: 'clamp(0.625rem, 1.5vw, 0.875rem)', fontWeight: '400' }}>
+                          Countries
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Card 3 */}
+                    <motion.div
+                      animate={{ 
+                        y: [0, -18, 0],
+                      }}
+                      transition={{ 
+                        duration: 6, 
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-xl md:rounded-2xl backdrop-blur-xl border border-white/20 p-3 md:p-5"
+                      style={{
+                        background: `linear-gradient(135deg, ${color}30, ${color}10)`
+                      }}
+                    >
+                      <div className="h-full flex flex-col justify-end">
+                        <div className="text-white" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', fontWeight: '800' }}>
+                          100%
+                        </div>
+                        <div className="text-white/70" style={{ fontSize: 'clamp(0.625rem, 1.5vw, 0.875rem)', fontWeight: '400' }}>
+                          Dedicated
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Card 4 - NEW */}
+                    <motion.div
+                      animate={{ 
+                        y: [0, -16, 0],
+                      }}
+                      transition={{ 
+                        duration: 6, 
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1.5
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-xl md:rounded-2xl backdrop-blur-xl border border-white/20 p-3 md:p-5"
+                      style={{
+                        background: `linear-gradient(135deg, ${color}30, ${color}10)`
+                      }}
+                    >
+                      <div className="h-full flex flex-col justify-end">
+                        <div className="text-white" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', fontWeight: '800' }}>
+                          24/7
+                        </div>
+                        <div className="text-white/70" style={{ fontSize: 'clamp(0.625rem, 1.5vw, 0.875rem)', fontWeight: '400' }}>
+                          Support
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Card 5 - NEW */}
+                    <motion.div
+                      animate={{ 
+                        y: [0, -17, 0],
+                      }}
+                      transition={{ 
+                        duration: 6, 
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 2
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-xl md:rounded-2xl backdrop-blur-xl border border-white/20 p-3 md:p-5"
+                      style={{
+                        background: `linear-gradient(135deg, ${color}30, ${color}10)`
+                      }}
+                    >
+                      <div className="h-full flex flex-col justify-end">
+                        <div className="text-white" style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', fontWeight: '800' }}>
+                          99%
+                        </div>
+                        <div className="text-white/70" style={{ fontSize: 'clamp(0.625rem, 1.5vw, 0.875rem)', fontWeight: '400' }}>
+                          Success
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
-                </motion.div>
+                </div>
               </div>
             ) : (
               /* Abstract Glassmorphic Card if no image */

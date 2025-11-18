@@ -22,38 +22,47 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
   return (
     <section ref={heroRef} className="relative w-full h-screen overflow-hidden">
       {/* Background Media with Parallax */}
-      <motion.div style={{ scale }} className="absolute inset-0">
-        {data.mediaType === 'video' ? (
-          <video
+      {data.mediaType === 'video' ? (
+        <div className="absolute inset-0 z-0">
+          <motion.video
+            key={data.mediaUrl}
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
+            style={{ scale }}
             className="absolute inset-0 w-full h-full object-cover"
+            onError={() => {
+              console.error('Video failed to load:', data.mediaUrl);
+            }}
           >
             <source src={data.mediaUrl} type="video/mp4" />
-          </video>
-        ) : (
+            Your browser does not support the video tag.
+          </motion.video>
+        </div>
+      ) : (
+        <motion.div style={{ scale }} className="absolute inset-0 z-0">
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${data.mediaUrl})` }}
           />
-        )}
-      </motion.div>
+        </motion.div>
+      )}
       
       {/* Multi-Layer Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a]/40 via-[#1a1a2e]/30 to-[#0a0a0a]/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a]/60 via-[#1a1a2e]/50 to-[#0a0a0a]/70"></div>
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         style={{
           background: `radial-gradient(circle at 30% 40%, ${color}40, transparent 60%)`
         }}
       ></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/70 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent"></div>
       
       {/* Animated Grid Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage: `linear-gradient(${color} 1px, transparent 1px), linear-gradient(90deg, ${color} 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
@@ -145,8 +154,17 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <button
-              className="group relative px-8 py-4 rounded-full overflow-hidden transition-all duration-500 hover:scale-105"
+              className="group relative px-8 py-4 rounded-full overflow-hidden transition-all duration-500 hover:scale-105 cursor-pointer"
               style={{ backgroundColor: color }}
+              onClick={() => {
+                const nextSection = document.querySelector('section:nth-of-type(2)');
+                if (nextSection) {
+                  nextSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }
+              }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
               <div className="relative flex items-center gap-3">
@@ -165,12 +183,22 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer"
+        onClick={() => {
+          const nextSection = document.querySelector('section:nth-of-type(2)');
+          if (nextSection) {
+            nextSection.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }}
       >
         <motion.div
           animate={{ y: [0, 12, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2"
+          whileHover={{ scale: 1.2 }}
+          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2 hover:border-white/60 transition-colors duration-300"
         >
           <motion.div 
             className="w-1.5 h-1.5 rounded-full"

@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { ServiceCTAData } from "../../types/service";
 import { ArrowRight, Sparkles } from "lucide-react";
 
@@ -143,47 +144,51 @@ export function ServiceCTA({ data, color }: ServiceCTAProps) {
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           {/* Primary Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="group relative px-10 py-5 rounded-full overflow-hidden transition-all duration-500"
-            style={{ backgroundColor: color }}
-          >
-            {/* Shine Effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
-              animate={{ x: ['-100%', '200%'] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-            />
-            
-            <div className="relative flex items-center gap-3">
-              <span 
-                className="text-white"
-                style={{ fontSize: '1rem', fontWeight: '700', letterSpacing: '0.05em' }}
-              >
-                {data.buttonText}
-              </span>
-              <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-2 transition-transform duration-300" />
-            </div>
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative px-10 py-5 rounded-full overflow-hidden transition-all duration-500"
+              style={{ backgroundColor: color }}
+            >
+              {/* Shine Effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+              />
+              
+              <div className="relative flex items-center gap-3">
+                <span 
+                  className="text-white"
+                  style={{ fontSize: '1rem', fontWeight: '700', letterSpacing: '0.05em' }}
+                >
+                  {data.buttonText}
+                </span>
+                <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-2 transition-transform duration-300" />
+              </div>
+            </motion.button>
+          </Link>
 
           {/* Secondary Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-10 py-5 rounded-full backdrop-blur-xl border transition-all duration-300"
-            style={{ 
-              borderColor: `${color}50`,
-              background: `${color}10`
-            }}
-          >
-            <span 
-              className="text-white"
-              style={{ fontSize: '1rem', fontWeight: '600', letterSpacing: '0.05em' }}
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-10 py-5 rounded-full backdrop-blur-xl border transition-all duration-300"
+              style={{ 
+                borderColor: `${color}50`,
+                background: `${color}10`
+              }}
             >
-              Learn More
-            </span>
-          </motion.button>
+              <span 
+                className="text-white"
+                style={{ fontSize: '1rem', fontWeight: '600', letterSpacing: '0.05em' }}
+              >
+                Contact Us
+              </span>
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Decorative Lines */}
