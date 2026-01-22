@@ -82,9 +82,9 @@ interface ServiceStatsProps {
 
 export function ServiceStats({ data, color }: ServiceStatsProps) {
   return (
-    <section className="relative py-32 px-8 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e]">
+    <section className="hidden relative py-32 px-8 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e]">
       {/* Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 hidden">
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[125px] md:w-[800px] md:h-[400px] rounded-full blur-[150px] opacity-20"
           style={{ backgroundColor: color }}

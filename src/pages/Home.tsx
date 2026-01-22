@@ -1,31 +1,30 @@
+import { Header } from "../components/Header";
 import { BusinessSection } from "../components/BusinessSection";
 import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
 
 export function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-
+      
       {/* Centered Content Container */}
-      <div className="flex-1 flex flex-col">
-        {/* Top Text Section - flex-1 pushes it to match bottom section */}
-        <section className="flex-1 flex flex-col justify-end pb-12 sm:pb-20">
-          <div className="mx-[5%] text-center">
-            <p className="text-sm sm:text-lg md:text-3xl lg:text-3xl min-[2300px]:text-5xl text-gray-900 leading-relaxed uppercase font-bold tracking-wider">
-              BUILDING LEGACIES EMPOWERING FUTURES
+      <div className="flex-1 flex flex-col justify-center">
+        {/* Top Text Section */}
+        <section className="flex-shrink-0 my-[20px] py-[0px] px-[32px] mx-[0px] mt-[80px] mr-[0px] mb-[20px] ml-[0px]">
+          <div className="mx-[10%] text-center">
+            <p className="md:text-3xl lg:text-4xl text-gray-900 leading-relaxed uppercase text-[16px] font-bold tracking-wider">
+              BUILDING LEGACIES. EMPOWERING FUTURES.
             </p>
           </div>
         </section>
 
-        {/* Business Divisions Section - Fixed height defined in component */}
+        {/* Business Divisions Section */}
         <BusinessSection />
 
-        {/* Bottom Quote Section - flex-1 pushes it to match top section */}
-        <section className="py-4 lg:flex flex-col justify-center">
-          <div className="max-w-[80vw] mx-auto text-center px-[32px]">
-            <p className="text-sm sm:text-lg md:text-3xl lg:text-2xl min-[2300px]:text-5xl text-gray-800 leading-relaxed font-medium tracking-wide">
-            {/* <p className="text-sm sm:text-lg md:text-3xl lg:text-3xl min-[2300px]:text-5xl text-gray-800 leading-relaxed font-medium tracking-wide whitespace-nowrap"> */}
+        {/* Bottom Quote Section */}
+        <section className="flex-shrink-0 px-[32px] py-[0px] p-[0px]">
+          <div className="max-w-[750px] mx-auto text-center">
+            <p className="md:text-xl text-gray-800 leading-relaxed text-[16px] pt-[20px] pr-[0px] pb-[0px] pl-[0px]">
               Pioneering sustainable growth and transformative solutions across global markets.
             </p>
           </div>

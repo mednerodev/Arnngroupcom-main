@@ -1,7 +1,7 @@
 
-  # Replicate Website Design
+  # arnngroup website
 
-  This is a code bundle for Replicate Website Design. The original project is available at https://www.figma.com/design/zE4V9NZ2G9dgnYdn4c0ddO/Replicate-Website-Design.
+  This is a code bundle for arnngroup website. The original project is available at https://www.figma.com/design/zE4V9NZ2G9dgnYdn4c0ddO/arnngroup-website.
 
   ## Running the code
 

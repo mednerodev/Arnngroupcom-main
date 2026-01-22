@@ -1,7 +1,7 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { motion, useScroll, useTransform, useInView } from "motion/react";
-import { Sparkles, Shield, Award, TrendingUp, Globe, Users } from "lucide-react";
+import { Sparkles, Shield, Award, TrendingUp, Globe, Users, Target, Lightbulb, Rocket, Building2, CheckCircle, ArrowRight } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
 function AnimatedCounter({ end, duration = 2 }: { end: number; duration?: number }) {
@@ -219,8 +219,164 @@ export function AboutUs() {
         </div>
       </section>
 
+      {/* Our Vision & Mission Section */}
+      <section className="relative py-32 px-8 bg-gradient-to-b from-[#1a1a2e] to-[#0a0a0a]">
+        <div className="max-w-[1400px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-6">
+              <span className="text-blue-300 uppercase tracking-[0.2em]" style={{ fontSize: '0.75rem', fontWeight: '600' }}>
+                Vision & Mission
+              </span>
+            </div>
+            <h2 className="text-white max-w-[800px] mx-auto" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800', lineHeight: '1.1' }}>
+              Shaping the{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Future</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Vision Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="group relative"
+            >
+              <div className="relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10 hover:border-blue-500/30 transition-all duration-500 h-full">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500"></div>
+                
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <Target className="w-8 h-8 text-blue-400" />
+                  </div>
+                  
+                  <h3 className="text-white mb-6" style={{ fontSize: '2.25rem', fontWeight: '700' }}>
+                    Our Vision
+                  </h3>
+                  
+                  <p className="text-gray-300 leading-relaxed mb-6" style={{ fontSize: '1.125rem', fontWeight: '300' }}>
+                    To be recognized as a global leader in diversified business excellence, pioneering sustainable growth across industries while creating lasting value for stakeholders and communities worldwide.
+                  </p>
+
+                  <div className="space-y-3">
+                    {["Global Leadership", "Sustainable Innovation", "Stakeholder Value"].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
+                        <span className="text-gray-400" style={{ fontSize: '0.9375rem' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mission Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="group relative"
+            >
+              <div className="relative bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10 hover:border-purple-500/30 transition-all duration-500 h-full">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500"></div>
+                
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <Rocket className="w-8 h-8 text-purple-400" />
+                  </div>
+                  
+                  <h3 className="text-white mb-6" style={{ fontSize: '2.25rem', fontWeight: '700' }}>
+                    Our Mission
+                  </h3>
+                  
+                  <p className="text-gray-300 leading-relaxed mb-6" style={{ fontSize: '1.125rem', fontWeight: '300' }}>
+                    To deliver exceptional value through innovative solutions, ethical business practices, and unwavering commitment to quality across our diverse portfolio of enterprises, while fostering growth and prosperity in every market we serve.
+                  </p>
+
+                  <div className="space-y-3">
+                    {["Excellence in Execution", "Ethical Practices", "Community Impact"].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
+                        <span className="text-gray-400" style={{ fontSize: '0.9375rem' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global Presence Section */}
+      <section className="relative py-32 px-8 bg-[#0a0a0a] overflow-hidden">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
+        
+        <div className="max-w-[1400px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-6">
+              <span className="text-blue-300 uppercase tracking-[0.2em]" style={{ fontSize: '0.75rem', fontWeight: '600' }}>
+                Global Footprint
+              </span>
+            </div>
+            <h2 className="text-white max-w-[900px] mx-auto mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800', lineHeight: '1.1' }}>
+              Operating Across{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Continents</span>
+            </h2>
+            <p className="text-gray-400 max-w-[700px] mx-auto" style={{ fontSize: '1.125rem', fontWeight: '300' }}>
+              Our strategic presence spans four dynamic markets, enabling us to leverage regional strengths and deliver global excellence
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { country: "United Arab Emirates", city: "Dubai", flag: "🇦🇪", color: "from-blue-500/20 to-cyan-500/20", borderColor: "border-blue-500/30" },
+              { country: "Montenegro", city: "Podgorica", flag: "🇲🇪", color: "from-purple-500/20 to-indigo-500/20", borderColor: "border-purple-500/30" },
+              { country: "Malaysia", city: "Kuala Lumpur", flag: "🇲🇾", color: "from-pink-500/20 to-rose-500/20", borderColor: "border-pink-500/30" },
+              { country: "Hong Kong", city: "Central", flag: "🇭🇰", color: "from-violet-500/20 to-purple-500/20", borderColor: "border-violet-500/30" }
+            ].map((location, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative"
+              >
+                <div className={`relative bg-gradient-to-br ${location.color} backdrop-blur-xl rounded-2xl p-8 border ${location.borderColor} hover:border-opacity-60 transition-all duration-500 text-center h-full flex flex-col justify-center min-h-[200px]`}>
+                  <div className="text-6xl mb-4">{location.flag}</div>
+                  <h4 className="text-white mb-2" style={{ fontSize: '1.25rem', fontWeight: '700' }}>
+                    {location.country}
+                  </h4>
+                  <div className="flex items-center justify-center gap-2 text-gray-400">
+                    <Building2 className="w-4 h-4" />
+                    <span style={{ fontSize: '0.9375rem' }}>{location.city}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Core Values Section - 3D Cards */}
-      <section className="relative py-32 px-8 bg-gradient-to-b from-[#1a1a2e] to-[#0a0a0a] pt-[20px] pr-[32px] pb-[128px] pl-[32px]">
+      <section className="relative py-32 px-8 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e] pt-[20px] pr-[32px] pb-[128px] pl-[32px]">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -299,21 +455,102 @@ export function AboutUs() {
         </div>
       </section>
 
+      {/* Strategic Approach Section */}
+      <section className="relative py-32 px-8 bg-[#1a1a2e] overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, #ffffff 1px, transparent 0)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+
+        <div className="max-w-[1400px] mx-auto relative">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-6">
+              <span className="text-blue-300 uppercase tracking-[0.2em]" style={{ fontSize: '0.75rem', fontWeight: '600' }}>
+                Our Strategy
+              </span>
+            </div>
+            <h2 className="text-white max-w-[900px] mx-auto mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '800', lineHeight: '1.1' }}>
+              Strategic{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Excellence</span>
+            </h2>
+            <p className="text-gray-400 max-w-[700px] mx-auto" style={{ fontSize: '1.125rem', fontWeight: '300' }}>
+              Our approach combines strategic foresight with operational excellence to drive sustainable growth
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Lightbulb, title: "Innovation First", desc: "Embracing cutting-edge solutions" },
+              { icon: TrendingUp, title: "Growth Focused", desc: "Sustainable expansion strategies" },
+              { icon: Users, title: "People Centric", desc: "Empowering teams globally" },
+              { icon: CheckCircle, title: "Quality Driven", desc: "Excellence in every endeavor" }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="group"
+              >
+                <div className="relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-500/30 transition-all duration-500 h-full">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <item.icon className="w-7 h-7 text-blue-400" />
+                  </div>
+                  <h4 className="text-white mb-3" style={{ fontSize: '1.25rem', fontWeight: '700' }}>
+                    {item.title}
+                  </h4>
+                  <p className="text-gray-400 leading-relaxed" style={{ fontSize: '0.9375rem' }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Closing Statement - Immersive */}
       <section className="relative py-40 px-8 overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2d3e5f] via-[#1e2a3d] to-[#0a0a0a]"></div>
-        <motion.div 
-          animate={{ 
-            backgroundPosition: ["0% 0%", "100% 100%"],
-          }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute inset-0 opacity-30"
-          style={{ 
-            backgroundImage: "radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.3) 0%, transparent 50%)",
-            backgroundSize: "200% 200%"
-          }}
-        ></motion.div>
+        <div className="absolute inset-0 bg-[#0a0a0a]" style={{
+          backgroundImage: `
+            radial-gradient(circle at 20% 30%, rgba(45, 62, 95, 0.8) 0%, transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.3) 0%, transparent 60%),
+            radial-gradient(circle at 10% 80%, rgba(99, 102, 241, 0.35) 0%, transparent 45%),
+            radial-gradient(circle at 90% 20%, rgba(168, 85, 247, 0.3) 0%, transparent 55%),
+            linear-gradient(135deg, #2d3e5f 0%, #1a2332 25%, #0f1419 50%, #0a0a0a 100%)
+          `,
+          backgroundSize: '150% 150%, 120% 120%, 180% 180%, 140% 140%, 130% 130%, 100% 100%',
+          animation: 'gradientShift 25s ease infinite'
+        }}>
+          <style>{`
+            @keyframes gradientShift {
+              0%, 100% {
+                background-position: 0% 0%, 100% 0%, 50% 50%, 0% 100%, 100% 100%, 0% 0%;
+              }
+              25% {
+                background-position: 30% 40%, 70% 30%, 60% 40%, 20% 80%, 90% 10%, 10% 10%;
+              }
+              50% {
+                background-position: 60% 60%, 40% 70%, 30% 70%, 50% 50%, 70% 30%, 20% 20%;
+              }
+              75% {
+                background-position: 90% 30%, 10% 90%, 70% 30%, 80% 20%, 30% 80%, 30% 30%;
+              }
+            }
+          `}</style>
+        </div>
         
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

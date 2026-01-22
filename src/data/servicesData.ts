@@ -78,16 +78,6 @@ export const servicesData: ServiceData[] = [
       ]
     },
     
-    stats: {
-      title: "Global Economic Impact",
-      items: [
-        { value: 1, label: "Billion-Euro Investments", suffix: "B+", prefix: "€", icon: "trending" },
-        { value: 10000, label: "Jobs Created", suffix: "+", icon: "users" },
-        { value: 5, label: "Government Partnerships", suffix: "+", icon: "globe" },
-        { value: 3, label: "Key Sectors", suffix: "", icon: "target" }
-      ]
-    },
-    
     success: {
       title: "Proven Track Record of Impactful Partnerships",
       subtitle: "Success Stories",

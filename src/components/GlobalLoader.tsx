@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-const logo = "/logo.svg";
+import logo from "figma:asset/4887e81018b6be301890d453fcf0bdc0fd5e7560.png";
 
 export function GlobalLoader() {
   return (
@@ -84,8 +84,8 @@ export function GlobalLoader() {
             alt="ARNN Group"
             className="h-24"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{
-              opacity: 1,
+            animate={{ 
+              opacity: 1, 
               scale: 1,
             }}
             transition={{
@@ -93,7 +93,7 @@ export function GlobalLoader() {
               ease: "easeOut"
             }}
           />
-
+          
           {/* Loading Bar */}
           <div className="w-48 h-0.5 bg-gray-200 rounded-full overflow-hidden">
             <motion.div
@@ -112,8 +112,8 @@ export function GlobalLoader() {
         {/* Subtle Loading Text */}
         <motion.p
           className="tracking-wide"
-          style={{
-            fontSize: '0.875rem',
+          style={{ 
+            fontSize: '0.875rem', 
             fontWeight: '700',
             color: '#2d3e5f',
             letterSpacing: '0.1em'
