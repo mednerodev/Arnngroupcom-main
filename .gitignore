@@ -80,6 +80,11 @@ __pycache__/
 .nuxt/
 .vercel/
 
+
+node_modules
+dist
+build
+
 # React
 .react-console-response/
 

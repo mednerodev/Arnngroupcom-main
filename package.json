@@ -1,15 +1,14 @@
 {
   "name": "arnn-group-website",
   "version": "1.0.0",
-      "private": true,
+  "private": true,
   "type": "module",
-  "packageManager": "npm@10.2.4",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
-      },
-      "scripts": {
-          "dev": "vite",
+  },
+  "scripts": {
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "postbuild": "echo 'Build completed successfully'"
@@ -63,11 +62,11 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
+    "@types/node": "^20.19.30",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react-swc": "^3.10.2",
-    "vite": "^5.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
   }
 }
