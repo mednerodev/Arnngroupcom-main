@@ -9,7 +9,7 @@ const categories = [
   { slug: "agro-aquaculture", name: "Agro-Aquaculture", color: "#10b981" },
   { slug: "fashion-industries", name: "Fashion Industries", color: "#ec4899" },
   { slug: "empowering-global-talent", name: "Empowering Global Talent", color: "#06b6d4" },
-  { slug: "healthcare-access", name: "Transforming Global Healthcare Access", color: "#f43f5e" },
+  { slug: "healthcare-access", name: "Global Healthcare", color: "#f43f5e" },
   { slug: "food-safety", name: "A Global Initiative for World Food Safety", color: "#16a34a" },
   { slug: "luxury-furniture", name: "Furniture and Furnishing Sectors", color: "#92400e" },
   { slug: "fb-segments", name: "F&B Segments", color: "#dc2626" },
