@@ -73,16 +73,11 @@ export function Header() {
           to="/"
           className="flex items-center gap-3 hover:opacity-80 transition-opacity"
         >
-          <div 
-            className="h-20 lg:h-28 lg:mt-3 flex items-center"
-            style={{ 
-              fontSize: '1.5rem', 
-              fontWeight: '700',
-              letterSpacing: '0.05em'
-            }}
-          >
-            ARNN GROUP
-          </div>
+          <img 
+            src="/arnn.png"
+            alt="ARNN GROUP"
+            className="h-20 lg:h-28 lg:mt-3"
+          />
         </Link>
 
         {/* Desktop Navigation - Hidden on mobile/tablet */}
@@ -180,16 +175,11 @@ export function Header() {
           >
             <SheetHeader>
               <SheetTitle className="text-white text-left">
-                <div 
-                  className="h-16 flex items-center"
-                  style={{ 
-                    fontSize: '1.5rem', 
-                    fontWeight: '700',
-                    letterSpacing: '0.05em'
-                  }}
-                >
-                  ARNN GROUP
-                </div>
+                <img 
+                  src="/arnn.png"
+                  alt="ARNN GROUP"
+                  className="h-16"
+                />
               </SheetTitle>
               <SheetDescription className="sr-only">
                 Navigation menu
