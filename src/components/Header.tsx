@@ -76,6 +76,11 @@ export function Header() {
           <img
             src="/arnn.png"
             alt="ARNN GROUP"
+<<<<<<< HEAD
+=======
+            width="146"
+            height="140"
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
             className="h-20 lg:h-28 lg:mt-3"
           />
         </Link>

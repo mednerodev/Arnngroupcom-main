@@ -19,7 +19,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Empowering communities through sustainable business development and financial inclusion initiatives.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1758304480396-c259d6ff1aa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbW11bml0eSUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc2MzQ1ODM4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1758304480396-c259d6ff1aa8?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGNvbW11bml0eSUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc2MzQ1ODM4OHww&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "economic-empowerment",
   },
   {
@@ -29,7 +33,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Creating innovative and sustainable property solutions that transform communities and elevate living standards.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjMzODQwMTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1695067438561-75492f7b6a9c?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmUlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjMzODQwMTN8MA&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "real-estate-development",
   },
   {
@@ -39,7 +47,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Delivering cutting-edge technology solutions that drive digital transformation and innovation.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwZGF0YSUyMGNlbnRlcnxlbnwxfHx8fDE3NjM0NDU1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwZGF0YSUyMGNlbnRlcnxlbnwxfHx8fDE3NjM0NDU1MTJ8MA&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "ict",
   },
   {
@@ -49,7 +61,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Pioneering sustainable farming and aquaculture practices for food security and environmental stewardship.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1686426575720-99714548a7e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXNoJTIwZmFybSUyMGFxdWFjdWx0dXJlfGVufDF8fHx8MTc2MzM3MDU1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1686426575720-99714548a7e1?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXNoJTIwZmFybSUyMGFxdWFjdWx0dXJlfGVufDF8fHx8MTc2MzM3MDU1NHww&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "agro-aquaculture",
   },
   {
@@ -59,7 +75,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Creating contemporary fashion and textile solutions that blend tradition with modern design excellence.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1632991727906-8386e1388975?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwZGVzaWduZXIlMjBzdHVkaW98ZW58MXx8fHwxNzYzNDU4Mzg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1632991727906-8386e1388975?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwZGVzaWduZXIlMjBzdHVkaW98ZW58MXx8fHwxNzYzNDU4Mzg5fDA&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "fashion-industries",
   },
   {
@@ -69,7 +89,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Connecting exceptional talent with global opportunities through strategic workforce development programs.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1624555130296-e551faf8969b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbSUyMG1lZXRpbmd8ZW58MXx8fHwxNzYzNDU1NjY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1624555130296-e551faf8969b?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbSUyMG1lZXRpbmd8ZW58MXx8fHwxNzYzNDU1NjY4fDA&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "empowering-global-talent",
   },
   {
@@ -79,7 +103,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Equipping Healthcare Facilities with world-class Medical Devices and Equipment.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1595464144526-5fb181b74625?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMG1lZGljYWwlMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzYzNDQ0OTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1595464144526-5fb181b74625?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbCUyMG1lZGljYWwlMjBlcXVpcG1lbnR8ZW58MXx8fHwxNzYzNDQ0OTM3fDA&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "healthcare-access",
   },
   {
@@ -89,7 +117,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Revolutionizing agriculture through innovative technology and sustainable farming solutions worldwide.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1708794666324-85ad91989d20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGZhcm1pbmclMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2MzQwMDMxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1708794666324-85ad91989d20?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGZhcm1pbmclMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2MzQwMDMxNXww&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "food-safety",
   },
   {
@@ -99,7 +131,11 @@ const divisions: BusinessDivision[] = [
     description:
       "Designing and manufacturing premium furniture solutions that combine functionality with aesthetic excellence.",
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1687180498602-5a1046defaa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBpbnRlcmlvciUyMGZ1cm5pdHVyZXxlbnwxfHx8fDE3NjM0NTgzOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+=======
+      "https://images.unsplash.com/photo-1687180498602-5a1046defaa4?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBpbnRlcmlvciUyMGZ1cm5pdHVyZXxlbnwxfHx8fDE3NjM0NTgzOTF8MA&ixlib=rb-4.1.0&q=60&w=800",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
     slug: "luxury-furniture",
   },
   {
@@ -459,6 +495,11 @@ export function BusinessSection() {
                 className={`relative overflow-hidden cursor-pointer transition-all duration-500 ease-in-out flex-shrink-0`}
                 style={{
                   width: cardWidth,
+<<<<<<< HEAD
+=======
+                  height: "60vh",
+                  minHeight: "60vh",
+>>>>>>> f8b36dfee4d3674b74de143729d230bf5c158a60
                 }}
                 onMouseEnter={() => {
                   if (!isTouchDevice && isVisible) {
