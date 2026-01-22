@@ -6,7 +6,7 @@ import {
   useTransform,
   useInView,
 } from "motion/react";
-import {
+import { 
   Sparkles,
   Shield,
   Award,

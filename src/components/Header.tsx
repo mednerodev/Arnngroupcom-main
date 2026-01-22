@@ -54,8 +54,8 @@ export function Header() {
   const isServicePage =
     location.pathname.startsWith("/services/");
 
-  // Check if we're on contact page at top of scroll
-  const isContactPageAtTop = location.pathname === "/contact" && !isScrolled;
+  // Check if we're on contact page or about-us page at top of scroll
+  const isContactPageAtTop = (location.pathname === "/contact" || location.pathname === "/about-us") && !isScrolled;
 
   return (
     <header
