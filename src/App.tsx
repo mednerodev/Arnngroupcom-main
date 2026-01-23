@@ -6,7 +6,7 @@ import { Contact } from "./pages/Contact";
 import { ServicePage } from "./pages/ServicePage";
 import { GlobalLoader } from "./components/GlobalLoader";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <Router>
-       <Analytics />
+      <Analytics />
 
       <ScrollToTop />
       <Routes>
