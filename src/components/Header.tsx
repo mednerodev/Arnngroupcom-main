@@ -72,7 +72,7 @@ export function Header() {
           className="flex items-center gap-3 hover:opacity-80 transition-opacity"
         >
           <img
-            src="/arnn.png"
+            src="/image.png"
             alt="ARNN GROUP"
             width="146"
             height="140"
@@ -84,8 +84,8 @@ export function Header() {
           <Link
             to="/"
             className={`text-sm tracking-wide hover:opacity-80 transition-opacity ${location.pathname === "/"
-                ? `border-b-2 ${isScrolled ? "border-white" : "border-gray-900"}`
-                : ""
+              ? `border-b-2 ${isScrolled ? "border-white" : "border-gray-900"}`
+              : ""
               }`}
           >
             HOME
@@ -94,8 +94,8 @@ export function Header() {
           <Link
             to="/about-us"
             className={`text-sm tracking-wide hover:opacity-80 transition-opacity ${location.pathname === "/about-us"
-                ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
-                : ""
+              ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
+              : ""
               }`}
           >
             ABOUT US
@@ -109,8 +109,8 @@ export function Header() {
           >
             <button
               className={`flex items-center gap-1 text-sm tracking-wide hover:opacity-80 transition-opacity ${isServicePage
-                  ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
-                  : ""
+                ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
+                : ""
                 }`}
             >
               OUR BUSINESSES
@@ -143,8 +143,8 @@ export function Header() {
           <Link
             to="/contact"
             className={`text-sm tracking-wide hover:opacity-80 transition-opacity ${location.pathname === "/contact"
-                ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
-                : ""
+              ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
+              : ""
               }`}
           >
             CONTACT
@@ -195,8 +195,8 @@ export function Header() {
                 to="/about-us"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/about-us"
-                    ? "bg-white/10"
-                    : ""
+                  ? "bg-white/10"
+                  : ""
                   }`}
               >
                 ABOUT US
@@ -243,8 +243,8 @@ export function Header() {
                 to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/contact"
-                    ? "bg-white/10"
-                    : ""
+                  ? "bg-white/10"
+                  : ""
                   }`}
               >
                 CONTACT
