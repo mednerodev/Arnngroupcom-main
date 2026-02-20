@@ -10,6 +10,8 @@ interface ServiceHeroProps {
 
 export function ServiceHero({ data, color }: ServiceHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isFashionIndustries =
+    data.headline === "Fashion Industries";
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -129,12 +131,16 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="mb-4"
+              className={isFashionIndustries ? "mb-10" : "mb-6"}
             >
               <img
                 src={data.businessLogoUrl}
                 alt="Wisebell logo"
-                className="h-20 md:h-24 lg:h-28 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)]"
+                className={`max-w-[280px] w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] ${
+                  isFashionIndustries
+                    ? "h-14 md:h-16 lg:h-20"
+                    : "h-16 md:h-20 lg:h-24"
+                }`}
               />
             </motion.div>
           )}
@@ -144,9 +150,9 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white mb-8 leading-[0.95]"
+            className="text-white mb-8 leading-[0.95] whitespace-nowrap"
             style={{
-              fontSize: 'clamp(3rem, 8vw, 7rem)',
+              fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
               fontWeight: '900',
               letterSpacing: '-0.04em'
             }}

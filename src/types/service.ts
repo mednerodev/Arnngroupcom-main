@@ -131,7 +131,7 @@ export interface ServiceData {
   description: string;
   icon?: string;
   color: string; // Primary brand color for the service
-  
+
   // Sections (all optional except hero and cta)
   hero: ServiceHeroData;
   overview?: ServiceOverviewData;
@@ -144,7 +144,7 @@ export interface ServiceData {
   testimonials?: ServiceTestimonialsData;
   faq?: ServiceFAQData;
   cta: ServiceCTAData;
-  
+
   // Navigation
   nextService?: string; // slug of next service
   prevService?: string; // slug of previous service

@@ -1,6 +1,10 @@
 import { ServiceData } from "../types/service";
 import economicEmpowermentVideo from "../assets/desktop Color.mp4";
 import wisebellLogo from "../assets/wisebell.png";
+import agrifuturesglobal from "../assets/agri-logo.webp";
+import lussocollezioni from "../assets/lussocollezioni.png";
+import mednero from "../assets/mednero.png";
+import mednerovidro from "../assets/Desktop.mp4";
 
 export const servicesData: ServiceData[] = [
   {
@@ -16,7 +20,7 @@ export const servicesData: ServiceData[] = [
       subheadline: "Strategic Partnerships & Citizenship Investment",
       description: "Empowering economic growth through strategic partnerships with governments, leveraging substantial billion-euro direct investments in real estate, agriculture, and industries.",
       mediaType: "video",
-      mediaUrl: economicEmpowermentVideo,
+      mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Billion-Euro Investments",
       businessLogoUrl: wisebellLogo
     },
@@ -458,7 +462,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Sustainable Innovation",
-      businessLogoUrl: wisebellLogo
+      businessLogoUrl: agrifuturesglobal
     },
 
     overview: {
@@ -635,7 +639,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Timeless Elegance",
-      businessLogoUrl: wisebellLogo
+      businessLogoUrl: lussocollezioni
     },
 
     overview: {
@@ -812,7 +816,7 @@ export const servicesData: ServiceData[] = [
       subheadline: "WiseBell Global - Redefining Global Workforce & Recruitment",
       description: "Conceived and led by ARNN Group, WiseBell Global is an innovative platform redefining the global workforce and recruitment landscape through secure, transparent, and technology-driven solutions.",
       mediaType: "video",
-      mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
+      mediaUrl: economicEmpowermentVideo,
       badge: "Ethical Recruitment",
       businessLogoUrl: wisebellLogo
     },
@@ -981,19 +985,19 @@ export const servicesData: ServiceData[] = [
   {
     id: "7",
     slug: "healthcare-access",
-    title: "Transforming Global Healthcare Access",
+    title: "Global Healthcare",
     tagline: "MedNero - Your Gateway to World-Class Healthcare",
     description: "A pioneering hybrid telehealth and medical travel platform connecting patients with world-class medical expertise through secure, reliable, and personalized healthcare solutions.",
     color: "#f43f5e", // Rose/Red for healthcare
 
     hero: {
-      headline: "Transforming Global Healthcare Access",
+      headline: "Global Healthcare",
       subheadline: "MedNero - Secure, Reliable Healthcare Anytime, Anywhere",
       description: "Your gateway to secure, reliable, and world-class healthcare—anytime, anywhere. A pioneering hybrid telehealth and medical travel platform transforming global healthcare access.",
       mediaType: "video",
-      mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
+      mediaUrl: mednerovidro,
       badge: "World-Class Care",
-      businessLogoUrl: wisebellLogo
+      businessLogoUrl: mednero
     },
 
     overview: {
