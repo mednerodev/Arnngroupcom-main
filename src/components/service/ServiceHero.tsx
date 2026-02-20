@@ -10,6 +10,17 @@ interface ServiceHeroProps {
 
 export function ServiceHero({ data, color }: ServiceHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isRealEstateHeadline =
+    data.headline === "Real Estate Development";
+  const isIctHeadline = data.headline === "ICT Development Strategy";
+  const isEmpoweringGlobalTalentHeadline =
+    data.headline === "Empowering Global Talent";
+  const isHealthcareHeadline =
+    data.headline === "Transforming Global Healthcare Access";
+  const isFoodSafetyHeadline =
+    data.headline === "A Global Initiative for World Food Safety";
+  const isFurnitureHeadline =
+    data.headline === "Furniture and Furnishing Sectors";
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -74,7 +85,7 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
         style={{ opacity, y }}
         className="relative h-full flex items-center justify-center px-8"
       >
-        <div className="max-w-[1200px] w-full">
+        <div className="max-w-[1200px] w-full translate-x-3 md:translate-x-8 translate-y-12 md:translate-y-24">
           {/* Badge */}
           {data.badge && (
             <motion.div
@@ -126,9 +137,19 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white mb-8 leading-[0.95]"
+            className={`text-white mb-8 leading-[0.95] ${
+              isRealEstateHeadline ? "lg:whitespace-nowrap" : ""
+            }`}
             style={{ 
-              fontSize: 'clamp(3rem, 8vw, 7rem)', 
+              fontSize: isIctHeadline ||
+                isEmpoweringGlobalTalentHeadline ||
+                isHealthcareHeadline ||
+                isFoodSafetyHeadline ||
+                isFurnitureHeadline
+                ? 'clamp(2rem, 4.8vw, 4.5rem)'
+                : isRealEstateHeadline
+                ? 'clamp(2.4rem, 5.6vw, 5.5rem)'
+                : 'clamp(3rem, 8vw, 7rem)', 
               fontWeight: '900',
               letterSpacing: '-0.04em'
             }}
