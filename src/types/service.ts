@@ -50,6 +50,7 @@ export interface ServiceStat {
   suffix?: string;
   prefix?: string;
   icon?: string;
+  description?: string;
 }
 
 export interface ServiceStatsData {
@@ -114,6 +115,7 @@ export interface ServiceSuccessStory {
   achievement: string;
   region: string;
   icon?: string;
+  metrics?: string;
 }
 
 export interface ServiceSuccessData {

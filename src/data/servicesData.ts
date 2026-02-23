@@ -212,22 +212,26 @@ export const servicesData: ServiceData[] = [
         {
           title: "Visionary Design",
           description: "Artist's eye for detail combined with developer's pragmatism to create spaces that inspire and transform.",
-          icon: "lightbulb"
+          icon: "lightbulb",
+          number: ""
         },
         {
           title: "Strategic Partnerships",
           description: "Collaborating with industry-leading architects, designers, and consultants to bring cutting-edge innovation to every project.",
-          icon: "handshake"
+          icon: "handshake",
+          number: ""
         },
         {
           title: "Sustainable Planning",
           description: "Integrating energy-efficient design and community engagement to create environmentally responsible developments.",
-          icon: "leaf"
+          icon: "leaf",
+          number: ""
         },
         {
           title: "Meticulous Execution",
           description: "Ensuring every aspect from aesthetics to functionality is carefully considered and flawlessly delivered.",
-          icon: "target"
+          icon: "target",
+          number: ""
         }
       ]
     },
@@ -353,22 +357,22 @@ export const servicesData: ServiceData[] = [
       subtitle: "Innovation Pipeline",
       steps: [
         {
-          number: 1,
+          number: "1",
           title: "Research & Analysis",
           description: "Identifying emerging technologies and market opportunities in the ICT sector through comprehensive research and analysis."
         },
         {
-          number: 2,
+          number: "2",
           title: "Solution Design",
           description: "Architecting scalable and secure technology solutions tailored to meet specific business needs and user requirements."
         },
         {
-          number: 3,
+          number: "3",
           title: "Development & Testing",
           description: "Building robust platforms with rigorous testing protocols to ensure reliability, security, and optimal performance."
         },
         {
-          number: 4,
+          number: "4",
           title: "Deployment & Support",
           description: "Seamless implementation with ongoing support, maintenance, and continuous innovation to drive long-term success."
         }
