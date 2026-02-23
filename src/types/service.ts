@@ -6,6 +6,7 @@ export interface ServiceHeroData {
   mediaUrl: string;
   badge?: string;
   businessLogoUrl?: string;
+  websitelink: string;
 }
 
 export interface ServiceOverviewData {

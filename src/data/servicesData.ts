@@ -5,7 +5,11 @@ import agrifuturesglobal from "../assets/agri-logo.webp";
 import lussocollezioni from "../assets/lussocollezioni.png";
 import mednero from "../assets/mednero.png";
 import mednerovidro from "../assets/Desktop.mp4";
-
+import lussocollezionivid from "../assets/lussocollezioni.webm";
+import agrifutureglobalvid from "../assets/agrifutureglobal.mp4";
+import maachome from "../assets/MAAC_Home_Logo.webp";
+const maachomevid =
+  "https://cdn.shopify.com/videos/c/o/v/ecfd087630c841f8a2f99558a8282875.webm";
 export const servicesData: ServiceData[] = [
   {
     id: "1",
@@ -22,6 +26,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Billion-Euro Investments",
+      websitelink:"#",
       // businessLogoUrl: wisebellLogo
     },
 
@@ -132,6 +137,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Hospitality Excellence",
+      websitelink:"#",
       // businessLogoUrl: wisebellLogo
     },
 
@@ -285,6 +291,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Digital Innovation",
+      websitelink:"#",
       // businessLogoUrl: wisebellLogo
     },
 
@@ -464,9 +471,11 @@ export const servicesData: ServiceData[] = [
       subheadline: "Technology-Driven Sustainable Food Production",
       description: "Pioneering agricultural innovation that seamlessly blends cutting-edge technology with traditional farming practices to revolutionize productivity, sustainability, and global food security.",
       mediaType: "video",
-      mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
+      mediaUrl: agrifutureglobalvid,
       badge: "Sustainable Innovation",
-      businessLogoUrl: agrifuturesglobal
+      businessLogoUrl: agrifuturesglobal,
+      websitelink: "https://www.agrifutureglobal.com"
+
     },
 
     overview: {
@@ -641,9 +650,10 @@ export const servicesData: ServiceData[] = [
       subheadline: "LussoCollezioni - Where Elegance Meets Innovation",
       description: "ARNN Group stands as a distinguished leader in the vibrant world of fashion, renowned for our unwavering commitment to redefine elegance and inspire through meticulously curated collections.",
       mediaType: "video",
-      mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
+      mediaUrl: lussocollezionivid,
       badge: "Timeless Elegance",
-      businessLogoUrl: lussocollezioni
+      businessLogoUrl: lussocollezioni,
+      websitelink:"https://lussocollezioni.com"
     },
 
     overview: {
@@ -822,7 +832,8 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: economicEmpowermentVideo,
       badge: "Ethical Recruitment",
-      businessLogoUrl: wisebellLogo
+      businessLogoUrl: wisebellLogo,
+      websitelink:"https://www.wisebellglobal.com"
     },
 
     overview: {
@@ -1001,7 +1012,8 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: mednerovidro,
       badge: "World-Class Care",
-      businessLogoUrl: mednero
+      businessLogoUrl: mednero,
+      websitelink:"https://mednero.com",
     },
 
     overview: {
@@ -1179,6 +1191,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Sustainable Agriculture",
+      websitelink:"#",
       // businessLogoUrl: wisebellLogo
     },
 
@@ -1335,7 +1348,7 @@ export const servicesData: ServiceData[] = [
       buttonText: "Visit AgriFuture Global",
       buttonLink: "https://www.agrifutureglobal.com",
       backgroundType: "image",
-      backgroundUrl: "https://images.unsplash.com/photo-1762828397344-1a5629661e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmdhbmljJTIwZmFybWluZyUyMGZpZWxkc3xlbnwxfHx8fDE3NjMyMDg3NDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      backgroundUrl: agrifutureglobalvid
     },
 
     nextService: "luxury-furniture",
@@ -1355,9 +1368,10 @@ export const servicesData: ServiceData[] = [
       subheadline: "Luxury Living Redefined Through Exquisite Craftsmanship",
       description: "ARNN Group is deeply entrenched in the realm of luxury and high-end quality furniture, accessories, and home decor finishings, catering to discerning customers who seek to elevate their living and working spaces.",
       mediaType: "video",
-      mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
+      mediaUrl: maachomevid,
       badge: "Luxury Furnishings",
-      // businessLogoUrl: wisebellLogo
+      businessLogoUrl: maachome,
+      websitelink:"https://maachome.com",
     },
 
     overview: {
@@ -1536,6 +1550,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Food & Beverage Excellence",
+      websitelink:"#",
       // businessLogoUrl: wisebellLogo
     },
 

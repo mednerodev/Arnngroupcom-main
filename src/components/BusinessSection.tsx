@@ -182,10 +182,14 @@ export function BusinessSection() {
     if (hoveredIndex !== null) {
       const timer = setTimeout(() => {
         setShowContent(hoveredIndex);
-      }, 500);
+      }, 300);
       return () => clearTimeout(timer);
     } else {
-      setShowContent(null);
+      // Keep previous content briefly so the outgoing animation stays smooth.
+      const timer = setTimeout(() => {
+        setShowContent(null);
+      }, 220);
+      return () => clearTimeout(timer);
     }
   }, [hoveredIndex]);
 
@@ -476,7 +480,7 @@ export function BusinessSection() {
                     // Set new hover with small delay to prevent flickering
                     hoverTimeoutRef.current = setTimeout(() => {
                       setHoveredIndex(localIndex);
-                    }, 100);
+                    }, 40);
                   }
                 }}
                 onMouseLeave={() => {
@@ -488,7 +492,7 @@ export function BusinessSection() {
                     // Reset hover state with slight delay
                     hoverTimeoutRef.current = setTimeout(() => {
                       setHoveredIndex(null);
-                    }, 50);
+                    }, 160);
                   }
                 }}
                 onClick={(e) => {
@@ -606,7 +610,7 @@ export function BusinessSection() {
                             : "opacity-0 translate-y-4"
                         }`}
                         style={{
-                          fontSize: "1.5rem",
+                          fontSize: "2.5rem",
                           lineHeight: "1.3",
                           fontWeight: "600",
                           transitionDelay:
@@ -623,7 +627,7 @@ export function BusinessSection() {
 
                       {/* Description - Smooth fade + slide up with delay */}
                       <p
-                        className={`mb-6 max-w-md text-[0.875rem] lg:text-[1.1rem] transition-all duration-700 ease-out ${
+                        className={`mb-6 max-w-md text-[0.875rem] lg:text-[2.5rem] transition-all duration-700 ease-out ${
                           (isVisible &&
                             showContent === localIndex) ||
                           (isTouchDevice &&
@@ -633,7 +637,7 @@ export function BusinessSection() {
                         }`}
                         style={{
                           lineHeight: "1.6",
-                          fontWeight: "400",
+                          fontWeight: "600",
                           transitionDelay:
                             (isVisible &&
                               showContent === localIndex) ||

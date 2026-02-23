@@ -12,6 +12,19 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const isFashionIndustries =
     data.headline === "Fashion Industries";
+  const youtubeMatch =
+    data.mediaUrl.match(
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([^&?/]+)/i,
+    );
+  const youtubeVideoId = youtubeMatch?.[1];
+  const isYoutubeVideo =
+    data.mediaType === "video" && Boolean(youtubeVideoId);
+  const youtubeEmbedUrl = youtubeVideoId
+    ? `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${youtubeVideoId}&modestbranding=1&rel=0&playsinline=1`
+    : "";
+  const videoMimeType = data.mediaUrl.toLowerCase().endsWith(".webm")
+    ? "video/webm"
+    : "video/mp4";
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -26,22 +39,34 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
       {/* Background Media with Parallax */}
       {data.mediaType === 'video' ? (
         <div className="absolute inset-0 z-0">
-          <motion.video
-            key={data.mediaUrl}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            style={{ scale }}
-            className="absolute inset-0 w-full h-full object-cover"
-            onError={() => {
-              console.error('Video failed to load:', data.mediaUrl);
-            }}
-          >
-            <source src={data.mediaUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </motion.video>
+          {isYoutubeVideo ? (
+            <motion.div style={{ scale }} className="absolute inset-0">
+              <iframe
+                src={youtubeEmbedUrl}
+                title="Hero video"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              />
+            </motion.div>
+          ) : (
+            <motion.video
+              key={data.mediaUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              style={{ scale }}
+              className="absolute inset-0 w-full h-full object-cover"
+              onError={() => {
+                console.error('Video failed to load:', data.mediaUrl);
+              }}
+            >
+              <source src={data.mediaUrl} type={videoMimeType} />
+              Your browser does not support the video tag.
+            </motion.video>
+          )}
         </div>
       ) : (
         <motion.div style={{ scale }} className="absolute inset-0 z-0">
@@ -133,14 +158,32 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
               transition={{ duration: 0.6, delay: 0.35 }}
               className={isFashionIndustries ? "mb-10" : "mb-6"}
             >
-              <img
-                src={data.businessLogoUrl}
-                alt="Wisebell logo"
-                className={`max-w-[280px] w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] ${isFashionIndustries
-                    ? "h-14 md:h-16 lg:h-20"
-                    : "h-16 md:h-20 lg:h-24"
-                  }`}
-              />
+              {data.websitelink ? (
+                <a
+                  href={data.websitelink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <img
+                    src={data.businessLogoUrl}
+                    alt="Business logo"
+                    className={`max-w-[280px] w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] cursor-pointer ${isFashionIndustries
+                        ? "h-14 md:h-16 lg:h-20"
+                        : "h-16 md:h-20 lg:h-24"
+                      }`}
+                  />
+                </a>
+              ) : (
+                <img
+                  src={data.businessLogoUrl}
+                  alt="Business logo"
+                  className={`max-w-[280px] w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] ${isFashionIndustries
+                      ? "h-14 md:h-16 lg:h-20"
+                      : "h-16 md:h-20 lg:h-24"
+                    }`}
+                />
+              )}
             </motion.div>
           )}
 
