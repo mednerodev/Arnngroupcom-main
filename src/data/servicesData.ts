@@ -22,7 +22,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Billion-Euro Investments",
-      businessLogoUrl: wisebellLogo
+      // businessLogoUrl: wisebellLogo
     },
 
     overview: {
@@ -132,7 +132,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Hospitality Excellence",
-      businessLogoUrl: wisebellLogo
+      // businessLogoUrl: wisebellLogo
     },
 
     overview: {
@@ -281,7 +281,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Digital Innovation",
-      businessLogoUrl: wisebellLogo
+      // businessLogoUrl: wisebellLogo
     },
 
     overview: {
@@ -1175,7 +1175,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Sustainable Agriculture",
-      businessLogoUrl: wisebellLogo
+      // businessLogoUrl: wisebellLogo
     },
 
     overview: {
@@ -1353,7 +1353,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Luxury Furnishings",
-      businessLogoUrl: wisebellLogo
+      // businessLogoUrl: wisebellLogo
     },
 
     overview: {
@@ -1532,7 +1532,7 @@ export const servicesData: ServiceData[] = [
       mediaType: "video",
       mediaUrl: "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4",
       badge: "Food & Beverage Excellence",
-      businessLogoUrl: wisebellLogo
+      // businessLogoUrl: wisebellLogo
     },
 
     overview: {

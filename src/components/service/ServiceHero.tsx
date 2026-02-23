@@ -136,11 +136,10 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
               <img
                 src={data.businessLogoUrl}
                 alt="Wisebell logo"
-                className={`max-w-[280px] w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] ${
-                  isFashionIndustries
+                className={`max-w-[280px] w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.3)] ${isFashionIndustries
                     ? "h-14 md:h-16 lg:h-20"
                     : "h-16 md:h-20 lg:h-24"
-                }`}
+                  }`}
               />
             </motion.div>
           )}
