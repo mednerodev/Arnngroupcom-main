@@ -12,6 +12,14 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const isFashionIndustries =
     data.headline === "Fashion Industries";
+  const isFoodSafetyHeadline =
+    /^a global initiative for world food/i.test(
+      data.headline.toLowerCase(),
+    );
+  const foodSafetySecondLine = data.headline.replace(
+    /^A Global Initiative for\s*/i,
+    "",
+  );
   const youtubeMatch =
     data.mediaUrl.match(
       /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([^&?/]+)/i,
@@ -192,14 +200,26 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white mb-8 leading-[0.95] whitespace-nowrap"
+            className={`text-white mb-8 leading-[0.95] ${
+              isFoodSafetyHeadline
+                ? "whitespace-normal"
+                : "whitespace-nowrap"
+            }`}
             style={{
               fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
               fontWeight: '900',
               letterSpacing: '-0.04em'
             }}
           >
-            {data.headline}
+            {isFoodSafetyHeadline ? (
+              <>
+                A Global Initiative for
+                <br />
+                {foodSafetySecondLine}
+              </>
+            ) : (
+              data.headline
+            )}
           </motion.h1>
 
           {/* Description */}
