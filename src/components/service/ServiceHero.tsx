@@ -28,7 +28,7 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
   const isYoutubeVideo =
     data.mediaType === "video" && Boolean(youtubeVideoId);
   const youtubeEmbedUrl = youtubeVideoId
-    ? `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${youtubeVideoId}&modestbranding=1&rel=0&playsinline=1`
+    ? `https://www.youtube-nocookie.com/embed/${youtubeVideoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${youtubeVideoId}&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1`
     : "";
   const videoMimeType = data.mediaUrl.toLowerCase().endsWith(".webm")
     ? "video/webm"
@@ -56,6 +56,8 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
                 allowFullScreen
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               />
+              {/* Mask YouTube top chrome (channel/title bar) */}
+              <div className="absolute top-0 left-0 right-0 h-14 md:h-16 bg-[#0a0a0a]" />
             </motion.div>
           ) : (
             <motion.video

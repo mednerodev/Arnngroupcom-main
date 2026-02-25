@@ -1,15 +1,18 @@
 import { ServiceData } from "../types/service";
-import economicEmpowermentVideo from "../assets/desktop Color.mp4";
 import wisebellLogo from "../assets/wisebell.png";
 import agrifuturesglobal from "../assets/agri-logo.webp";
 import lussocollezioni from "../assets/lussocollezioni.png";
 import mednero from "../assets/mednero.png";
-import mednerovidro from "../assets/Desktop.mp4";
-import lussocollezionivid from "../assets/lussocollezioni.webm";
-import agrifutureglobalvid from "../assets/agrifutureglobal.mp4";
 import maachome from "../assets/MAAC_Home_Logo.webp";
+const economicEmpowermentVideo =
+  "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000259/desktop_Color_woccre.mp4";
+const mednerovidro =
+  "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000217/Desktop_mkhoui.mp4";
+const lussocollezionivid = "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000152/lussocollezioni_znpj4x.webm"
+const agrifutureglobalvid =
+    "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000215/agrifutureglobal_xhtkmv.mp4";
 const maachomevid =
-  "https://cdn.shopify.com/videos/c/o/v/ecfd087630c841f8a2f99558a8282875.webm";
+  "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000159/maachomevid_jvowuv.webm";
 export const servicesData: ServiceData[] = [
   {
     id: "1",
