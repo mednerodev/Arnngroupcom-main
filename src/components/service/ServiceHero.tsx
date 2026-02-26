@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ServiceHeroData } from "../../types/service";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { useIsMobile } from "../ui/use-mobile";
 
 interface ServiceHeroProps {
   data: ServiceHeroData;
@@ -10,6 +11,11 @@ interface ServiceHeroProps {
 
 export function ServiceHero({ data, color }: ServiceHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  
+  // Use mobile video URL if available and on mobile device
+  const effectiveMediaUrl = isMobile && data.mobileVideoUrl ? data.mobileVideoUrl : data.mediaUrl;
+  
   const isFashionIndustries =
     data.headline === "Fashion Industries";
   const isFoodSafetyHeadline =
@@ -21,7 +27,7 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
     "",
   );
   const youtubeMatch =
-    data.mediaUrl.match(
+    effectiveMediaUrl.match(
       /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([^&?/]+)/i,
     );
   const youtubeVideoId = youtubeMatch?.[1];
@@ -61,7 +67,7 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
             </motion.div>
           ) : (
             <motion.video
-              key={data.mediaUrl}
+              key={effectiveMediaUrl}
               autoPlay
               loop
               muted
@@ -70,10 +76,10 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
               style={{ scale }}
               className="absolute inset-0 w-full h-full object-cover"
               onError={() => {
-                console.error('Video failed to load:', data.mediaUrl);
+                console.error('Video failed to load:', effectiveMediaUrl);
               }}
             >
-              <source src={data.mediaUrl} type={videoMimeType} />
+              <source src={effectiveMediaUrl} type={videoMimeType} />
               Your browser does not support the video tag.
             </motion.video>
           )}

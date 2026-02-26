@@ -4,6 +4,7 @@ export interface ServiceHeroData {
   description: string;
   mediaType: 'video' | 'image';
   mediaUrl: string;
+  mobileVideoUrl?: string; // Optional mobile-specific video URL (e.g., YouTube embed for mobile)
   badge?: string;
   businessLogoUrl?: string;
   websitelink: string;

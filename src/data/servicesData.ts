@@ -475,6 +475,7 @@ export const servicesData: ServiceData[] = [
       description: "Pioneering agricultural innovation that seamlessly blends cutting-edge technology with traditional farming practices to revolutionize productivity, sustainability, and global food security.",
       mediaType: "video",
       mediaUrl: agrifutureglobalvid,
+      mobileVideoUrl: "https://www.youtube.com/watch?v=5Y7c63qcIsg",
       badge: "Sustainable Innovation",
       businessLogoUrl: agrifuturesglobal,
       websitelink: "https://www.agrifutureglobal.com"
