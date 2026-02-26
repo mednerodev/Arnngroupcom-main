@@ -79,6 +79,7 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
                 console.error('Video failed to load:', effectiveMediaUrl);
               }}
             >
+              <source src={data.mediaUrl} type={videoMimeType} />
               <source src={effectiveMediaUrl} type={videoMimeType} />
               Your browser does not support the video tag.
             </motion.video>

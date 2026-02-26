@@ -655,6 +655,7 @@ export const servicesData: ServiceData[] = [
       description: "ARNN Group stands as a distinguished leader in the vibrant world of fashion, renowned for our unwavering commitment to redefine elegance and inspire through meticulously curated collections.",
       mediaType: "video",
       mediaUrl: lussocollezionivid,
+      mobileVideoUrl: "https://cdn.shopify.com/videos/c/o/v/426bc9896abe4affbc20360f0a8a0796.mp4",
       badge: "Timeless Elegance",
       businessLogoUrl: lussocollezioni,
       websitelink:"https://lussocollezioni.com"
@@ -835,6 +836,7 @@ export const servicesData: ServiceData[] = [
       description: "Conceived and led by ARNN Group, WiseBell Global is an innovative platform redefining the global workforce and recruitment landscape through secure, transparent, and technology-driven solutions.",
       mediaType: "video",
       mediaUrl: economicEmpowermentVideo,
+      mobileVideoUrl: "https://www.wisebellglobal.com/homepage-video.mp4",
       badge: "Ethical Recruitment",
       businessLogoUrl: wisebellLogo,
       websitelink:"https://www.wisebellglobal.com"
@@ -1015,6 +1017,7 @@ export const servicesData: ServiceData[] = [
       description: "Your gateway to secure, reliable, and world-class healthcare—anytime, anywhere. A pioneering hybrid telehealth and medical travel platform transforming global healthcare access.",
       mediaType: "video",
       mediaUrl: mednerovidro,
+      mobileVideoUrl: mednerovidro,
       badge: "World-Class Care",
       businessLogoUrl: mednero,
       websitelink:"https://mednero.com",
@@ -1373,6 +1376,7 @@ export const servicesData: ServiceData[] = [
       description: "ARNN Group is deeply entrenched in the realm of luxury and high-end quality furniture, accessories, and home decor finishings, catering to discerning customers who seek to elevate their living and working spaces.",
       mediaType: "video",
       mediaUrl: maachomevid,
+      mobileVideoUrl: "https://cdn.shopify.com/videos/c/o/v/842c0f948a19437b897c501cc90a9194.mp4",
       badge: "Luxury Furnishings",
       businessLogoUrl: maachome,
       websitelink:"https://maachome.com",
