@@ -475,7 +475,7 @@ export const servicesData: ServiceData[] = [
       description: "Pioneering agricultural innovation that seamlessly blends cutting-edge technology with traditional farming practices to revolutionize productivity, sustainability, and global food security.",
       mediaType: "video",
       mediaUrl: agrifutureglobalvid,
-      mobileVideoUrl: agrifutureglobalvid,
+      mobileVideoUrl: "https://www.youtube.com/watch?v=5Y7c63qcIsg",
       badge: "Sustainable Innovation",
       businessLogoUrl: agrifuturesglobal,
       websitelink: "https://www.agrifutureglobal.com"
@@ -1017,7 +1017,7 @@ export const servicesData: ServiceData[] = [
       description: "Your gateway to secure, reliable, and world-class healthcare—anytime, anywhere. A pioneering hybrid telehealth and medical travel platform transforming global healthcare access.",
       mediaType: "video",
       mediaUrl: mednerovidro,
-      mobileVideoUrl: mednerovidro,
+      mobileVideoUrl: "https://www.youtube.com/watch?v=UMfCe4C2XBI",
       badge: "World-Class Care",
       businessLogoUrl: mednero,
       websitelink:"https://mednero.com",
