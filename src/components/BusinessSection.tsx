@@ -39,7 +39,7 @@ const divisions: BusinessDivision[] = [
     description:
       "Delivering cutting-edge technology solutions that drive digital transformation and innovation.",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwZGF0YSUyMGNlbnRlcnxlbnwxfHx8fDE3NjM0NDU1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://69a17470d09d9185fbb0b15c.imgix.net/7d17e341-58cc-496c-a1f4-416082bf8f91.jpg",
     slug: "ict",
   },
   {
@@ -534,9 +534,7 @@ export function BusinessSection() {
                   }`}
                   style={{
                     backgroundImage: `url(${division.image})`,
-                    filter: isEmpoweringGlobalTalent
-                      ? "blur(1.5px) brightness(0.85)"
-                      : undefined,
+                    filter: "blur(1.5px) brightness(0.85)",
                   }}
                 />
 
@@ -610,7 +608,7 @@ export function BusinessSection() {
                             : "opacity-0 translate-y-4"
                         }`}
                         style={{
-                          fontSize: "2.5rem",
+                          fontSize: "3.5rem",
                           lineHeight: "1.3",
                           fontWeight: "600",
                           transitionDelay:
@@ -627,7 +625,7 @@ export function BusinessSection() {
 
                       {/* Description - Smooth fade + slide up with delay */}
                       <p
-                        className={`mb-6 max-w-md text-[0.875rem] lg:text-[2.5rem] transition-all duration-700 ease-out ${
+                        className={`mb-6 max-w-md text-[1rem] md:text-[1.125rem] lg:text-[2.75rem] transition-all duration-700 ease-out ${
                           (isVisible &&
                             showContent === localIndex) ||
                           (isTouchDevice &&

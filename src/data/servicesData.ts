@@ -4,15 +4,11 @@ const wisebellLogo = "https://www.wisebellglobal.com/_next/image?url=%2Fwisebell
 const mednero = "https://res.cloudinary.com/djnxf36jq/image/upload/v1772000149/mednero_e8zzqx.png";
 const maachome = "https://res.cloudinary.com/djnxf36jq/image/upload/v1772000146/MAAC_Home_Logo_pemjq7.webp";
 const agrifuturesglobal = "https://res.cloudinary.com/djnxf36jq/image/upload/v1772000148/agri-logo_ceutys.webp";
-const economicEmpowermentVideo =
-  "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000259/desktop_Color_woccre.mp4";
-const mednerovidro =
-  "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000217/Desktop_mkhoui.mp4";
+const economicEmpowermentVideo ="https://cdn.shopify.com/videos/c/o/v/90f4f6ec75d341e0903daf1d9e5cba91.mp4";
+const mednerovidro ="https://res.cloudinary.com/djnxf36jq/video/upload/v1772000217/Desktop_mkhoui.mp4";
 const lussocollezionivid = "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000152/lussocollezioni_znpj4x.webm"
-const agrifutureglobalvid =
-    "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000215/agrifutureglobal_xhtkmv.mp4";
-const maachomevid =
-  "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000159/maachomevid_jvowuv.webm";
+const agrifutureglobalvid ="https://cdn.shopify.com/videos/c/o/v/8f0daad6abae4963a523eec50a1ed2e4.mp4";
+const maachomevid ="https://res.cloudinary.com/djnxf36jq/video/upload/v1772000159/maachomevid_jvowuv.webm";
 export const servicesData: ServiceData[] = [
   {
     id: "1",
@@ -475,7 +471,7 @@ export const servicesData: ServiceData[] = [
       description: "Pioneering agricultural innovation that seamlessly blends cutting-edge technology with traditional farming practices to revolutionize productivity, sustainability, and global food security.",
       mediaType: "video",
       mediaUrl: agrifutureglobalvid,
-      mobileVideoUrl: "https://www.youtube.com/watch?v=5Y7c63qcIsg",
+      mobileVideoUrl: "https://cdn.shopify.com/videos/c/o/v/669c6deb83704373a5d09c323d6c7ea9.mp4",
       badge: "Sustainable Innovation",
       businessLogoUrl: agrifuturesglobal,
       websitelink: "https://www.agrifutureglobal.com",
@@ -837,7 +833,7 @@ export const servicesData: ServiceData[] = [
       description: "Conceived and led by ARNN Group, WiseBell Global is an innovative platform redefining the global workforce and recruitment landscape through secure, transparent, and technology-driven solutions.",
       mediaType: "video",
       mediaUrl: economicEmpowermentVideo,
-      mobileVideoUrl: "https://www.wisebellglobal.com/homepage-video.mp4",
+      mobileVideoUrl: "https://cdn.shopify.com/videos/c/o/v/90f4f6ec75d341e0903daf1d9e5cba91.mp4",
       badge: "Ethical Recruitment",
       businessLogoUrl: wisebellLogo,
       websitelink: "https://www.wisebellglobal.com",

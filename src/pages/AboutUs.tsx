@@ -337,7 +337,7 @@ export function AboutUs() {
         </motion.div>
 
         {/* Light Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-blue-50/80 to-indigo-100/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-blue-50/80 to-indigo-80/85"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.15),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
 
