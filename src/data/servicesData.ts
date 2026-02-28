@@ -5,7 +5,7 @@ const mednero = "https://res.cloudinary.com/djnxf36jq/image/upload/v1772000149/m
 const maachome = "https://res.cloudinary.com/djnxf36jq/image/upload/v1772000146/MAAC_Home_Logo_pemjq7.webp";
 const agrifuturesglobal = "https://res.cloudinary.com/djnxf36jq/image/upload/v1772000148/agri-logo_ceutys.webp";
 const economicEmpowermentVideo ="https://cdn.shopify.com/videos/c/o/v/90f4f6ec75d341e0903daf1d9e5cba91.mp4";
-const mednerovidro ="https://res.cloudinary.com/djnxf36jq/video/upload/v1772000217/Desktop_mkhoui.mp4";
+const mednerovidro ="https://cdn.shopify.com/videos/c/o/v/53de1eb2a57e44edbaf858325c881d03.mp4";
 const lussocollezionivid = "https://res.cloudinary.com/djnxf36jq/video/upload/v1772000152/lussocollezioni_znpj4x.webm"
 const agrifutureglobalvid ="https://cdn.shopify.com/videos/c/o/v/8f0daad6abae4963a523eec50a1ed2e4.mp4";
 const maachomevid ="https://res.cloudinary.com/djnxf36jq/video/upload/v1772000159/maachomevid_jvowuv.webm";
@@ -1015,7 +1015,7 @@ export const servicesData: ServiceData[] = [
       description: "Your gateway to secure, reliable, and world-class healthcare—anytime, anywhere. A pioneering hybrid telehealth and medical travel platform transforming global healthcare access.",
       mediaType: "video",
       mediaUrl: mednerovidro,
-      mobileVideoUrl: "https://res.cloudinary.com/djnxf36jq/video/upload/v1772093559/Mobile_ver_g1ukpp.mp4",
+      mobileVideoUrl: "https://cdn.shopify.com/videos/c/o/v/e98a538a81b845f0bf24622a37167816.mp4",
       badge: "World-Class Care",
       businessLogoUrl: mednero,
       websitelink: "https://mednero.com",
