@@ -599,7 +599,7 @@ export function BusinessSection() {
                     <div>
                       {/* Heading - Smooth fade + slide up */}
                       <h3
-                        className={`mb-4 transition-all duration-700 ease-out ${
+                        className={`mb-4 transition-all duration-700 ease-out font-serif ${
                           (isVisible &&
                             showContent === localIndex) ||
                           (isTouchDevice &&
@@ -625,7 +625,7 @@ export function BusinessSection() {
 
                       {/* Description - Smooth fade + slide up with delay */}
                       <p
-                        className={`mb-6 max-w-md text-[1rem] md:text-[1.125rem] lg:text-[2.75rem] transition-all duration-700 ease-out ${
+                        className={`mb-6 max-w-md text-[1rem] md:text-[1.125rem] lg:text-[2.75rem] transition-all duration-700 ease-out font-serif ${
                           (isVisible &&
                             showContent === localIndex) ||
                           (isTouchDevice &&

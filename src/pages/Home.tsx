@@ -24,7 +24,7 @@ export function Home() {
         {/* Bottom Quote Section */}
         <section className="flex-shrink-0 px-[32px] py-[0px] p-[0px]">
           <div className="max-w-[750px] mx-auto text-center">
-            <p className="md:text-xl text-gray-800 leading-relaxed text-[16px] pt-[20px] pr-[0px] pb-[0px] pl-[0px]">
+            <p className="md:text-xl text-gray-800 leading-relaxed text-[16px] pt-[20px] pr-[0px] pb-[0px] pl-[0px] font-serif">
               Pioneering sustainable growth and transformative solutions across global markets.
             </p>
           </div>
