@@ -61,7 +61,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 py-3 px-4 md:px-8 flex-shrink-0 transition-all duration-500 ${isVisible ? "top-0" : "-top-32"
+      className={`fixed left-0 right-0 z-50 py-3 px-8 flex-shrink-0 transition-all duration-500 ${isVisible ? "top-0" : "-top-32"
         } ${isScrolled
           ? "bg-[#2d3e5f] text-white shadow-lg"
           : `bg-transparent ${location.pathname === "/" || isContactPageAtTop ? "text-gray-900" : "text-white"}`
@@ -73,11 +73,13 @@ export function Header() {
           to="/"
           className="flex items-center gap-3 hover:opacity-80 transition-opacity"
         >
-            {/* public/arnn.png */}
           <img
             src={arnnLogo}
             alt="ARNN GROUP"
-            className="h-20 w-auto md:h-[140px]"
+            width={138}
+            height={140}
+              style={{ height: undefined, width: undefined }}
+              className="!h-10 !w-auto lg:!h-[140px] lg:!w-[146px]"
           />
         </Link>
 
@@ -96,7 +98,7 @@ export function Header() {
           <Link
             to="/about-us"
             className={`text-sm tracking-wide hover:opacity-80 transition-opacity ${location.pathname === "/about-us"
-              ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
+              ? `border-b-2 ${isScrolled || location.pathname !== "/about-us" ? "border-white" : "border-gray-900"}`
               : ""
               }`}
           >
@@ -145,7 +147,7 @@ export function Header() {
           <Link
             to="/contact"
             className={`text-sm tracking-wide hover:opacity-80 transition-opacity ${location.pathname === "/contact"
-              ? `border-b-2 ${isScrolled || location.pathname !== "/" ? "border-white" : "border-gray-900"}`
+              ? `border-b-2 ${isScrolled || location.pathname !== "/contact" ? "border-white" : "border-gray-900"}`
               : ""
               }`}
           >
