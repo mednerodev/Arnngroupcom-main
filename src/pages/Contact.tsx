@@ -1,20 +1,25 @@
 import { motion } from "motion/react";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import "../styles/about-contact-redesign.css";
-import "react-international-phone/style.css";
+import { useEffect, useState } from "react";
+import { useForm, useWatch } from "react-hook-form";
+import useWeb3Forms from "@web3forms/react";
 import {
   ArrowRight,
+  BriefcaseBusiness,
   CheckCircle2,
   Clock3,
+  Globe2,
   Mail,
   MapPin,
   Phone,
   Send,
+  ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { useState } from "react";
 import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+import "../styles/about-contact-redesign.css";
 
 const officeAddress = "Office No. 215, Al Makhawi Building, Oud Metha, Dubai";
 const mapSearchAddress = "Al Makhawi Building, Oud Metha, Dubai";
@@ -52,9 +57,52 @@ const channels = [
 
 const responseNotes = [
   "Messages are reviewed during standard business hours.",
-  "Clear scope and timeline help us route enquiries faster.",
-  "Phone and email remain available for direct contact.",
+  "A complete brief helps us assign the right team faster.",
+  "Every submission arrives with reply-ready contact details.",
 ];
+
+const briefingItems = [
+  {
+    icon: BriefcaseBusiness,
+    title: "Commercial context",
+    body: "Share the business objective, stakeholder type, and what outcome you want from the conversation.",
+  },
+  {
+    icon: Globe2,
+    title: "Timeline and geography",
+    body: "Include target market, launch timing, and any constraints around approvals, delivery, or travel.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Decision readiness",
+    body: "If relevant, mention budget range, urgency, or whether you are exploring, shortlisting, or ready to proceed.",
+  },
+];
+
+type FormValues = {
+  name: string;
+  email: string;
+  company: string;
+  phoneCountry: string;
+  phone: string;
+  enquiryType: string;
+  subject: string;
+  timeline: string;
+  message: string;
+  botcheck: boolean;
+};
+
+type Web3FormPayload = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  phone?: string;
+  company?: string;
+  enquiry_type?: string;
+  preferred_timeline?: string;
+  replyto?: string;
+};
 
 function getDefaultPhoneCountry() {
   if (typeof window === "undefined") return "ae";
@@ -84,71 +132,112 @@ function getDefaultPhoneCountry() {
   return timeZoneMap[timeZone] || "ae";
 }
 
-export function Contact() {
-  const [formData, setFormData] = useState(() => ({
+function buildDefaultValues(): FormValues {
+  return {
     name: "",
     email: "",
+    company: "",
     phoneCountry: getDefaultPhoneCountry(),
     phone: "",
-    subject: "",
+    enquiryType: "Strategic partnership",
+    subject: "New business enquiry from ARNN Group website",
+    timeline: "Within 30 days",
     message: "",
-  }));
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    botcheck: false,
+  };
+}
+
+function buildEmailBody(values: FormValues) {
+  const company = values.company.trim() || "Not provided";
+  const phone = values.phone.trim() || "Not provided";
+  const brief = values.message.trim();
+
+  return [
+    "NEW BUSINESS ENQUIRY",
+    "",
+    "Contact Summary",
+    `Name: ${values.name.trim()}`,
+    `Email: ${values.email.trim()}`,
+    `Phone: ${phone}`,
+    `Company / Organization: ${company}`,
+    "",
+    "Enquiry Profile",
+    `Enquiry Type: ${values.enquiryType}`,
+    `Preferred Timeline: ${values.timeline}`,
+    `Subject: ${values.subject.trim()}`,
+    "",
+    "Message Brief",
+    brief,
+    "",
+    "Reply Guidance",
+    "Use the sender email as the primary reply channel. Phone is included when supplied.",
+  ].join("\n");
+}
+
+export function Contact() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [submitMessage, setSubmitMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setValue,
+    watch,
+    control,
+    formState: { isSubmitting },
+  } = useForm<FormValues>({
+    mode: "onTouched",
+    defaultValues: buildDefaultValues(),
+  });
+
+  const watchedName = useWatch({ control, name: "name" });
+  const watchedEnquiryType = useWatch({ control, name: "enquiryType" });
+
+  useEffect(() => {
+    const nameSegment = watchedName?.trim() || "New";
+    setValue("subject", `${nameSegment} | ${watchedEnquiryType} | ARNN Group website`, {
+      shouldDirty: false,
+      shouldTouch: false,
+      shouldValidate: false,
+    });
+  }, [setValue, watchedEnquiryType, watchedName]);
+
+  const { submit } = useWeb3Forms<Web3FormPayload>({
+    access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+    settings: {
+      from_name: "ARNN Group Website",
+    },
+    onSuccess: (message) => {
+      setSubmitStatus("success");
+      setSubmitMessage(message || "Your message was sent successfully.");
+      reset(buildDefaultValues());
+      window.setTimeout(() => {
+        setSubmitStatus("idle");
+        setSubmitMessage("");
+      }, 5000);
+    },
+    onError: (message) => {
+      setSubmitStatus("error");
+      setSubmitMessage(message || "Something went wrong. Please try again.");
+    },
+  });
+
+  const handleFormSubmit = (values: FormValues) => {
     setSubmitStatus("idle");
     setSubmitMessage("");
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone.trim(),
-          subject: formData.subject,
-          message: formData.message,
-        }),
-      });
-
-      const result = await response.json();
-      const resultMessage =
-        result?.body?.message || result?.message || "Something went wrong. Please try again.";
-
-      if (response.ok && result.success) {
-        setSubmitStatus("success");
-        setSubmitMessage(resultMessage || "Your message was sent successfully.");
-        setFormData((current) => ({
-          name: "",
-          email: "",
-          phoneCountry: current.phoneCountry,
-          phone: "",
-          subject: "",
-          message: "",
-        }));
-        window.setTimeout(() => {
-          setSubmitStatus("idle");
-          setSubmitMessage("");
-        }, 5000);
-      } else {
-        setSubmitStatus("error");
-        setSubmitMessage(resultMessage);
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setSubmitStatus("error");
-      setSubmitMessage("Network error. Please check your connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    return submit({
+      name: values.name.trim(),
+      email: values.email.trim(),
+      replyto: values.email.trim(),
+      subject: values.subject.trim(),
+      phone: values.phone.trim() || undefined,
+      company: values.company.trim() || undefined,
+      enquiry_type: values.enquiryType,
+      preferred_timeline: values.timeline,
+      message: buildEmailBody(values),
+    });
   };
 
   return (
@@ -179,8 +268,8 @@ export function Contact() {
                     Reach out for partnerships, projects, strategic enquiries, or media conversations.
                   </h1>
                   <p className="ar2-lead">
-                    Use the form for detailed enquiries, or contact the group directly through phone
-                    or email. Clear briefs with scope and timeline help us route your message faster.
+                    Use the contact desk below to send a structured business brief. The form is set
+                    up to deliver a cleaner, more decision-ready submission to our inbox.
                   </p>
                 </div>
 
@@ -261,43 +350,83 @@ export function Contact() {
                 <div className="ar2-form-head">
                   <div className="ar2-chip ar2-chip-dark">
                     <Send size={14} />
-                    <span>Send a message</span>
+                    <span>Executive contact desk</span>
                   </div>
                   <h2 className="ar2-heading ar2-heading-light">
-                    Write with enough detail for a meaningful reply.
+                    Send a polished brief with the right context from the first message.
                   </h2>
                   <p className="ar2-form-copy">
-                    For partnerships, commercial proposals, media requests, or project discussions,
-                    use the form below and include the relevant context.
+                    The form uses the official Web3Forms React integration and submits structured
+                    enquiry data so your email notifications are easier to review and reply to.
                   </p>
+
+                  <div className="ar2-briefing-grid">
+                    {briefingItems.map((item) => {
+                      const Icon = item.icon;
+
+                      return (
+                        <div key={item.title} className="ar2-briefing-card">
+                          <div className="ar2-briefing-icon">
+                            <Icon size={18} />
+                          </div>
+                          <div>
+                            <h3>{item.title}</h3>
+                            <p>{item.body}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
-                <form className="ar2-form" onSubmit={handleSubmit}>
+                <form className="ar2-form" onSubmit={handleSubmit(handleFormSubmit)}>
+                  <input
+                    type="checkbox"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="ar2-botcheck"
+                    {...register("botcheck")}
+                  />
+
                   <div className="ar2-form-grid">
                     <label className="ar2-field">
-                      <span>Name</span>
+                      <span>Full name</span>
                       <input
                         type="text"
-                        value={formData.name}
-                        onChange={(e) =>
-                          setFormData((current) => ({ ...current, name: e.target.value }))
-                        }
-                        required
-                        placeholder="Your name"
+                        {...register("name", { required: true })}
+                        placeholder="Your full name"
                       />
                     </label>
 
                     <label className="ar2-field">
-                      <span>Email</span>
+                      <span>Business email</span>
                       <input
                         type="email"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData((current) => ({ ...current, email: e.target.value }))
-                        }
-                        required
+                        {...register("email", { required: true })}
                         placeholder="you@company.com"
                       />
+                    </label>
+                  </div>
+
+                  <div className="ar2-form-grid">
+                    <label className="ar2-field">
+                      <span>Company or organization</span>
+                      <input
+                        type="text"
+                        {...register("company")}
+                        placeholder="Company name"
+                      />
+                    </label>
+
+                    <label className="ar2-field">
+                      <span>Enquiry type</span>
+                      <select {...register("enquiryType", { required: true })}>
+                        <option value="Strategic partnership">Strategic partnership</option>
+                        <option value="Project discussion">Project discussion</option>
+                        <option value="Investment opportunity">Investment opportunity</option>
+                        <option value="Media request">Media request</option>
+                        <option value="General business enquiry">General business enquiry</option>
+                      </select>
                     </label>
                   </div>
 
@@ -306,53 +435,53 @@ export function Contact() {
                       <span>Phone</span>
                       <div className="ar2-phone-shell ar2-phone-shell-world">
                         <PhoneInput
-                          defaultCountry={formData.phoneCountry}
-                          value={formData.phone}
-                          onChange={(phone, meta) =>
-                            setFormData((current) => ({
-                              ...current,
-                              phone,
-                              phoneCountry: meta.country.iso2,
-                            }))
-                          }
+                          defaultCountry={watch("phoneCountry")}
+                          value={watch("phone")}
+                          onChange={(phone, meta) => {
+                            setValue("phone", phone, { shouldDirty: true });
+                            setValue("phoneCountry", meta.country.iso2, { shouldDirty: true });
+                          }}
                           forceDialCode
                           disableDialCodePrefill={false}
                           inputProps={{
-                            name: "phone",
+                            name: "phone_ui",
                             autoComplete: "tel",
-                            required: false,
                             "aria-label": "Phone number",
                           }}
                           placeholder="50 123 4567"
                           className="ar2-phone-input"
                         />
                       </div>
+                      <input type="hidden" {...register("phone")} />
+                      <input type="hidden" {...register("phoneCountry")} />
                     </div>
 
                     <label className="ar2-field">
-                      <span>Subject</span>
-                      <input
-                        type="text"
-                        value={formData.subject}
-                        onChange={(e) =>
-                          setFormData((current) => ({ ...current, subject: e.target.value }))
-                        }
-                        required
-                        placeholder="Partnership, project, media, or strategic enquiry"
-                      />
+                      <span>Preferred timeline</span>
+                      <select {...register("timeline", { required: true })}>
+                        <option value="Immediate">Immediate</option>
+                        <option value="Within 30 days">Within 30 days</option>
+                        <option value="This quarter">This quarter</option>
+                        <option value="Exploratory discussion">Exploratory discussion</option>
+                      </select>
                     </label>
                   </div>
 
                   <label className="ar2-field">
-                    <span>Message</span>
+                    <span>Subject line</span>
+                    <input
+                      type="text"
+                      {...register("subject", { required: true })}
+                      placeholder="Subject line"
+                    />
+                  </label>
+
+                  <label className="ar2-field">
+                    <span>Message brief</span>
                     <textarea
                       rows={7}
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData((current) => ({ ...current, message: e.target.value }))
-                      }
-                      required
-                      placeholder="Describe the opportunity, context, timeline, and preferred next step."
+                      {...register("message", { required: true })}
+                      placeholder="Describe the opportunity, scope, timeline, market, and preferred next step."
                     />
                   </label>
 
@@ -419,8 +548,8 @@ export function Contact() {
 
               <div className="ar2-map-frame">
                 <iframe
-                  title="ARNN Group office map"
-                  src={`https://maps.google.com/maps?q=${encodeURIComponent(mapSearchAddress)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
+                  title="ARNN Group office location"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(mapSearchAddress)}&output=embed`}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />

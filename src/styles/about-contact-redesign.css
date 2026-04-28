@@ -1014,6 +1014,46 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
+.ar2-briefing-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.ar2-briefing-card {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.ar2-briefing-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  color: #dce8ff;
+  background: linear-gradient(135deg, rgba(123, 167, 255, 0.28), rgba(123, 167, 255, 0.08));
+}
+
+.ar2-briefing-card h3 {
+  margin: 0 0 6px;
+  color: #fff;
+  font: 700 15px/1.35 "Inter", sans-serif;
+}
+
+.ar2-briefing-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font: 500 14px/1.6 "Inter", sans-serif;
+}
+
 .ar2-heading-light {
   color: #fff;
 }
@@ -1041,6 +1081,7 @@
 }
 
 .ar2-field input,
+.ar2-field select,
 .ar2-field textarea {
   width: 100%;
   min-width: 0;
@@ -1058,15 +1099,34 @@
 }
 
 .ar2-field input::placeholder,
+.ar2-field select::placeholder,
 .ar2-field textarea::placeholder {
   color: rgba(255, 255, 255, 0.42);
 }
 
 .ar2-field input:focus,
+.ar2-field select:focus,
 .ar2-field textarea:focus {
   border-color: rgba(124, 167, 255, 0.72);
   background: rgba(255, 255, 255, 0.11);
   box-shadow: 0 0 0 4px rgba(124, 167, 255, 0.12);
+}
+
+.ar2-field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.72) 50%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72) 50%, transparent 50%);
+  background-position:
+    calc(100% - 22px) calc(50% - 2px),
+    calc(100% - 16px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.ar2-field select option {
+  color: #ffffff;
+  background: #16233d;
 }
 
 .ar2-field textarea {
@@ -1154,6 +1214,10 @@
 .ar2-form-submit:disabled {
   opacity: 0.72;
   cursor: wait;
+}
+
+.ar2-botcheck {
+  display: none;
 }
 
 .ar2-status {
