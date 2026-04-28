@@ -70,7 +70,7 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
                 title="Hero video"
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
-                className="pointer-events-none border-0"
+                className="pointer-events-none border-0 bg-video-blur"
                 style={{
                   position: 'absolute',
                   top: '50%',
@@ -90,7 +90,7 @@ export function ServiceHero({ data, color }: ServiceHeroProps) {
               playsInline
               preload="auto"
               style={{ scale }}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover bg-video-blur"
               onError={() => {
                 console.error('Video failed to load:', activeMediaUrl);
               }}

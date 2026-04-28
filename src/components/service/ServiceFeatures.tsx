@@ -75,7 +75,7 @@ export function ServiceFeatures({ data, color }: ServiceFeaturesProps) {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover bg-video-blur"
         >
           <source src={videoUrl} type="video/mp4" />
         </video>

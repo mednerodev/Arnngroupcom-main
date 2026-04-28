@@ -21,7 +21,7 @@ export function ServiceCTA({ data, color }: ServiceCTAProps) {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover bg-video-blur"
           >
             <source src={data.backgroundUrl} type="video/mp4" />
           </video>

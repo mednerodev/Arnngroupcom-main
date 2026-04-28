@@ -39,7 +39,7 @@ const divisions: BusinessDivision[] = [
     description:
       "Delivering cutting-edge technology solutions that drive digital transformation and innovation.",
     image:
-      "https://69a17470d09d9185fbb0b15c.imgix.net/7d17e341-58cc-496c-a1f4-416082bf8f91.jpg",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80",
     slug: "ict",
   },
   {
@@ -600,7 +600,7 @@ export function BusinessSection() {
                     <div>
                       {/* Heading - Smooth fade + slide up */}
                       <h3
-                        className={`mb-4 transition-all duration-700 ease-out ${
+                        className={`mb-4 business-card-heading ${isICTCard ? "business-card-heading--ict" : ""} transition-all duration-700 ease-out ${
                           (isVisible &&
                             showContent === localIndex) ||
                           (isTouchDevice &&
@@ -609,7 +609,6 @@ export function BusinessSection() {
                             : "opacity-0 translate-y-4"
                         }`}
                         style={{
-                          fontSize: isICTCard ? "2.5rem" : "3.5rem",
                           lineHeight: "1.3",
                           fontWeight: "400",
                           transitionDelay:

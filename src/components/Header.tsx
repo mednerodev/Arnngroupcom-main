@@ -1,20 +1,22 @@
 import { ChevronDown, Menu } from "lucide-react";
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { servicesData } from "../data/servicesData";
 import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from "./ui/sheet";
 
 const arnnLogo = 'https://res.cloudinary.com/djnxf36jq/image/upload/v1772000146/arnn_omu8nl.png';
 
 export function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -23,6 +25,25 @@ export function Header() {
     useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] =
     useState(false);
+
+  // Close the mobile sheet whenever the route changes.
+  // This prevents the Radix Dialog overlay from getting "stuck" after navigation.
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
+  }, [location.pathname]);
+
+  const handleMobileNav = useCallback(
+    (to: string) => (e: React.MouseEvent) => {
+      // Close first, then navigate. Prevents Radix Dialog from getting stuck
+      // when navigation interrupts the close/unmount animation.
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      setIsMobileServicesOpen(false);
+      window.setTimeout(() => navigate(to), 0);
+    },
+    [navigate],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,10 +97,7 @@ export function Header() {
           <img
             src={arnnLogo}
             alt="ARNN GROUP"
-            width={138}
-            height={140}
-              style={{ height: undefined, width: undefined }}
-              className="!h-10 !w-auto lg:!h-[140px] lg:!w-[146px]"
+            className="site-logo"
           />
         </Link>
 
@@ -157,8 +175,12 @@ export function Header() {
 
         {/* Mobile/Tablet Burger Menu - Visible on mobile/tablet only */}
         <Sheet
+          key={location.pathname}
           open={isMobileMenuOpen}
-          onOpenChange={setIsMobileMenuOpen}
+          onOpenChange={(open) => {
+            setIsMobileMenuOpen(open);
+            if (!open) setIsMobileServicesOpen(false);
+          }}
         >
           <SheetTrigger asChild>
             <button
@@ -186,25 +208,29 @@ export function Header() {
             </SheetHeader>
 
             <nav className="flex flex-col gap-1 mt-8">
-              <Link
-                to="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/" ? "bg-white/10" : ""
-                  }`}
-              >
-                HOME
-              </Link>
+              <SheetClose asChild>
+                <Link
+                  to="/"
+                  onClick={handleMobileNav("/")}
+                  className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/" ? "bg-white/10" : ""
+                    }`}
+                >
+                  HOME
+                </Link>
+              </SheetClose>
 
-              <Link
-                to="/about-us"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/about-us"
-                  ? "bg-white/10"
-                  : ""
-                  }`}
-              >
-                ABOUT US
-              </Link>
+              <SheetClose asChild>
+                <Link
+                  to="/about-us"
+                  onClick={handleMobileNav("/about-us")}
+                  className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/about-us"
+                    ? "bg-white/10"
+                    : ""
+                    }`}
+                >
+                  ABOUT US
+                </Link>
+              </SheetClose>
 
               {/* Mobile Our Businesses Accordion */}
               <div className="flex flex-col">
@@ -227,32 +253,34 @@ export function Header() {
                 {isMobileServicesOpen && (
                   <div className="flex flex-col ml-4 mt-1">
                     {servicesData.map((service) => (
-                      <Link
-                        key={service.id}
-                        to={`/services/${service.slug}`}
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                          setIsMobileServicesOpen(false);
-                        }}
-                        className="px-4 py-2 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg"
-                      >
-                        {service.title}
-                      </Link>
+                      <SheetClose asChild key={service.id}>
+                        <Link
+                          to={`/services/${service.slug}`}
+                          onClick={handleMobileNav(
+                            `/services/${service.slug}`,
+                          )}
+                          className="px-4 py-2 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg"
+                        >
+                          {service.title}
+                        </Link>
+                      </SheetClose>
                     ))}
                   </div>
                 )}
               </div>
 
-              <Link
-                to="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/contact"
-                  ? "bg-white/10"
-                  : ""
-                  }`}
-              >
-                CONTACT
-              </Link>
+              <SheetClose asChild>
+                <Link
+                  to="/contact"
+                  onClick={handleMobileNav("/contact")}
+                  className={`px-4 py-3 text-sm tracking-wide hover:bg-white/10 transition-colors rounded-lg ${location.pathname === "/contact"
+                    ? "bg-white/10"
+                    : ""
+                    }`}
+                >
+                  CONTACT
+                </Link>
+              </SheetClose>
             </nav>
           </SheetContent>
         </Sheet>
