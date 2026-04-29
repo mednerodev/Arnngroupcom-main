@@ -1,7 +1,7 @@
+import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ServiceCTAData } from "../../types/service";
-import { ArrowRight, Sparkles } from "lucide-react";
 
 interface ServiceCTAProps {
   data: ServiceCTAData;
@@ -28,7 +28,7 @@ export function ServiceCTA({ data, color }: ServiceCTAProps) {
             <p className="srv-copy mt-5 max-w-[58ch]">{data.description}</p>
           </div>
 
-          <div className="flex flex-wrap gap-14 items-center justify-start lg:justify-end">
+          <div className="srv-cta-actions">
             <Link to="/contact" className="srv-button srv-button-primary">
               {data.buttonText}
               <ArrowRight size={18} />

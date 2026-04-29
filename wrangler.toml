@@ -1,0 +1,2 @@
+name = "arnn-group-website"
+pages_build_output_dir = "./dist"

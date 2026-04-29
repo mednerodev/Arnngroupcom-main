@@ -248,6 +248,14 @@
   align-items: start;
 }
 
+.srv-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
+  width: 100%;
+}
+
 .srv-overview-shell {
   display: grid;
   gap: 28px;
@@ -855,6 +863,16 @@
   align-items: center;
 }
 
+@media (min-width: 1024px) {
+  .srv-cta-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 .srv-nav-shell {
   padding: 30px;
   border-radius: 30px;
@@ -1106,6 +1124,10 @@
     justify-content: center;
   }
 
+  .srv-cta-actions {
+    margin-top: 4px;
+  }
+
   .srv-panel,
   .srv-story,
   .srv-stat,
@@ -1236,11 +1258,12 @@
   }
 
   .srv-process-card {
-    padding: 58px 22px 22px;
+    padding: 22px 22px 22px;
     border-radius: 24px;
   }
 
   .srv-process-marker {
+    top: 22px;
     width: 48px;
     height: 48px;
     left: 22px;
@@ -1256,6 +1279,12 @@
   .srv-category-spotlight-top,
   .srv-category-spotlight-bottom {
     align-items: flex-start;
+  }
+
+  .srv-process-card-top {
+    margin-bottom: 16px;
+    padding-left: 62px;
+    align-items: center;
   }
 
   .srv-story-meta {
